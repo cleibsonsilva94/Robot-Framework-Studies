@@ -2,6 +2,13 @@
 
 Este repositório contém estudos e práticas com testes automatizados utilizando o **Robot Framework**, uma poderosa ferramenta de automação de testes orientada a palavras-chave. Os testes são escritos em **Python** e fazem uso da **SeleniumLibrary** para automação de aplicações web, com suporte do **WebDriver**.
 
+## 🤔 Qual a grande vantagem de usar o Robot Framework?
+
+A principal vantagem do Robot Framework é a sua simplicidade.  
+A linguagem de programação em Python é encapsulada em bibliotecas, e o testador utiliza apenas palavras-chave para executar as ações necessárias. Isso o torna ideal para QAs que estão iniciando no mundo da programação.
+
+Além disso, o Robot Framework permite a automação de testes para sistemas **Web**, **Mobile**, **Desktop** e **APIs**. Possui uma comunidade bem ativa (inclusive no Brasil) e é **open source**, permitindo que você crie suas próprias bibliotecas em **Python**, de acordo com suas necessidades.
+
 ## 📌 Requisitos
 
 Antes de executar os testes, verifique se os seguintes componentes estão instalados em seu ambiente:
@@ -35,6 +42,7 @@ Antes de executar os testes, verifique se os seguintes componentes estão instal
    pip install robotframework
    pip install robotframework-seleniumlibrary
    ```
+
 ## 🥾 Execução dos Testes
 
 Para rodar os testes, utilize o seguinte comando na raiz do projeto:
@@ -51,9 +59,7 @@ robot tests/
 
 ## 📂 Estrutura do Projeto
 
-
 ## 🧪 Aplicação Testada
-
 
 ## 📚 Referência
 
