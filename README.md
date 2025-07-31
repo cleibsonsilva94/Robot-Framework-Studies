@@ -51,11 +51,9 @@ robot tests/
 
 ## 📂 Estrutura do Projeto
 
-> A estrutura do projeto será definida em breve. Esta seção será atualizada com os diretórios e arquivos criados para os testes.
 
 ## 🧪 Aplicação Testada
 
-> [Link para a aplicação que está sendo testada – se aplicável]
 
 ## 📚 Referência
 
