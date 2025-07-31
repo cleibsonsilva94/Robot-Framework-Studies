@@ -35,10 +35,6 @@ Antes de executar os testes, verifique se os seguintes componentes estão instal
    pip install robotframework
    pip install robotframework-seleniumlibrary
    ```
-
-5. Certifique-se de que o **WebDriver** está instalado e disponível no PATH.  
-   - [Download do ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
-
 ## 🥾 Execução dos Testes
 
 Para rodar os testes, utilize o seguinte comando na raiz do projeto:
