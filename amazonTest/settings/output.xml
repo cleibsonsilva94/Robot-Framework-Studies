@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-07-31T12:34:14.746096" rpa="false" schemaversion="5">
+<suite id="s1" name="Amazon Test" source="C:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\amazonTest\webTest\amazon_test.robot">
+<test id="s1-t1" name="Verificar Título da Página" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-31T12:34:15.311925" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/s?i=electronics'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-31T12:34:15.310927" elapsed="13.258093"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-31T12:34:28.690204" level="INFO">Page title is 'Eletrônicos e Tecnologia | Amazon.com.br'.</msg>
+<arg>${TITULO_ESPERADO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-07-31T12:34:28.569020" elapsed="0.121184"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-31T12:34:28.691201" elapsed="2.308350"/>
+</kw>
+<status status="PASS" start="2025-07-31T12:34:15.308931" elapsed="15.690620"/>
+</test>
+<test id="s1-t2" name="Verificar Texto na Página" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-31T12:34:31.001753" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/s?i=electronics'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-31T12:34:31.000707" elapsed="10.968977"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-31T12:34:42.134673" level="INFO">Current page contains text 'Eletrônicos e Tecnologia'.</msg>
+<arg>${TEXTO_ESPERADO}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-07-31T12:34:41.969684" elapsed="0.164989"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-31T12:34:42.134673" elapsed="2.356503"/>
+</kw>
+<status status="PASS" start="2025-07-31T12:34:31.000707" elapsed="13.490469"/>
+</test>
+<test id="s1-t3" name="Verificar Categoria na Página" line="25">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-31T12:34:44.491176" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/s?i=electronics'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-31T12:34:44.491176" elapsed="16.751728"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-31T12:35:01.382023" level="INFO">Current page contains text 'Computadores e Informática'.</msg>
+<arg>${CATEGORIA_ESPERADA}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-07-31T12:35:01.246776" elapsed="0.135247"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-31T12:35:01.383032" elapsed="2.291641"/>
+</kw>
+<status status="PASS" start="2025-07-31T12:34:44.491176" elapsed="19.183497"/>
+</test>
+<status status="PASS" start="2025-07-31T12:34:14.751111" elapsed="48.923562"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Amazon Test" id="s1" pass="3" fail="0" skip="0">Amazon Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
