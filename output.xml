@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-01T16:54:54.699002" rpa="false" schemaversion="5">
+<suite id="s1" name="Amazon Test" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
+<test id="s1-t1" name="Test Case 1 - Access to the &quot;Electronics&quot; menu" line="9">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:54:55.130502" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-01T16:54:55.130502" elapsed="4.028400"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-01T16:54:59.158902" elapsed="0.066711"/>
+</kw>
+<status status="PASS" start="2025-08-01T16:54:55.129501" elapsed="4.096112"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:54:59.231623" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-01T16:54:59.229646" elapsed="9.879747"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${TEXT_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:55:09.109393" elapsed="0.065201"/>
+</kw>
+<status status="PASS" start="2025-08-01T16:54:59.226613" elapsed="9.947981"/>
+</kw>
+<doc>Validar resultado da pesquisa por categoria e
+verificação do retorno de categoria "Computadores e Informática"</doc>
+<tag>categorias</tag>
+<tag>menus</tag>
+<status status="PASS" start="2025-08-01T16:54:55.128492" elapsed="14.047100"/>
+</test>
+<doc>Essa suite testa o site da Amazon.com.br</doc>
+<status status="PASS" start="2025-08-01T16:54:54.710489" elapsed="14.468102"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">categorias</stat>
+<stat pass="1" fail="0" skip="0">menus</stat>
+</tag>
+<suite>
+<stat name="Amazon Test" id="s1" pass="1" fail="0" skip="0">Amazon Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
