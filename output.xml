@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-01T16:54:54.699002" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-04T17:12:03.706582" rpa="false" schemaversion="5">
 <suite id="s1" name="Amazon Test" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
 <test id="s1-t1" name="Test Case 1 - Access to the &quot;Electronics&quot; menu" line="9">
 <kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-01T16:54:55.130502" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-08-04T17:12:04.260891" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-01T16:54:55.130502" elapsed="4.028400"/>
+<status status="PASS" start="2025-08-04T17:12:04.260891" elapsed="4.542151"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-01T16:54:59.158902" elapsed="0.066711"/>
+<status status="PASS" start="2025-08-04T17:12:08.803692" elapsed="0.064570"/>
 </kw>
-<status status="PASS" start="2025-08-01T16:54:55.129501" elapsed="4.096112"/>
+<status status="PASS" start="2025-08-04T17:12:04.260891" elapsed="4.608358"/>
 </kw>
 <kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-08-01T16:54:59.231623" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<msg time="2025-08-04T17:12:08.870752" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-08-01T16:54:59.229646" elapsed="9.879747"/>
+<status status="PASS" start="2025-08-04T17:12:08.870752" elapsed="8.622462"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>locator=${TEXT_ELETRONICOS}</arg>
+<arg>locator=${LOGO_AMAZON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-01T16:55:09.109393" elapsed="0.065201"/>
+<status status="PASS" start="2025-08-04T17:12:17.493214" elapsed="0.051136"/>
 </kw>
-<status status="PASS" start="2025-08-01T16:54:59.226613" elapsed="9.947981"/>
+<status status="PASS" start="2025-08-04T17:12:08.869249" elapsed="8.675101"/>
+</kw>
+<kw name="Entrar no menu &quot;Livros&quot;" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-04T17:12:17.546371" level="INFO">Clicking element '//a[contains(text(),'Livros')]'.</msg>
+<arg>locator=${LIVROS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-04T17:12:17.546371" elapsed="5.004712"/>
+</kw>
+<status status="PASS" start="2025-08-04T17:12:17.545344" elapsed="5.005739"/>
+</kw>
+<kw name="Verificar se aparece a frase &quot;Loja de Livros&quot;" owner="amazon_resources">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=${HEADER_LIVROS}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-04T17:12:22.556939" elapsed="0.044271"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${HEADING_SENTENCE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-04T17:12:22.601210" elapsed="0.032147"/>
+</kw>
+<status status="PASS" start="2025-08-04T17:12:22.551083" elapsed="0.082274"/>
 </kw>
 <doc>Validar resultado da pesquisa por categoria e
 verificação do retorno de categoria "Computadores e Informática"</doc>
 <tag>categorias</tag>
 <tag>menus</tag>
-<status status="PASS" start="2025-08-01T16:54:55.128492" elapsed="14.047100"/>
+<status status="PASS" start="2025-08-04T17:12:04.260891" elapsed="18.373470"/>
 </test>
 <doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="PASS" start="2025-08-01T16:54:54.710489" elapsed="14.468102"/>
+<status status="PASS" start="2025-08-04T17:12:03.724573" elapsed="18.911310"/>
 </suite>
 <statistics>
 <total>

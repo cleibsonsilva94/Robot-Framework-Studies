@@ -10,11 +10,9 @@ Test Case 1 - Access to the "Electronics" menu
     [Documentation]  Validar resultado da pesquisa por categoria e 
     ...              verificação do retorno de categoria "Computadores e Informática"
     [Tags]           menus  categorias
-    Acessar a home page do site Amazon.com.br
-#     Entrar no menu "Eletrônicos"
-    
-#     Verificar se o título da página fica "Eletrônicos e Tecnologia"
-#     Verificar se aparece a frase "Eletrônicos e Tecnologia"
+    Acessar a home page do site Amazon.com.br    
+    Entrar no menu "Livros"
+    Verificar se aparece a frase "Loja de Livros"
 #     Verificar se aparece a categoria "Computadores e Informática"
 
 # Test Case 2 - Product search
