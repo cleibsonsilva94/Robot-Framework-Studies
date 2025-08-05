@@ -22,3 +22,5 @@ Verificar se aparece a frase "Loja de Livros"
     Wait Until Element Is Visible    locator=${HEADING_SENTENCE}
 Verifique que o título da página fica "${TITLE}"
     Title Should Be    title=${TITLE}
+Verificar se aparece a categoria "${CATEGORY}"
+    Element Should Be Visible  locator=//div[contains(@class,'container')]/*[@alt="${CATEGORY}"]

@@ -14,8 +14,8 @@ Test Case 1 - Access to the "Livros" menu
     Entrar no menu "Livros"
     Verificar se aparece a frase "Loja de Livros"
     Verifique que o título da página fica "Livros | Amazon.com.br"
-#   Verificar se aparece a categoria "Computadores e Informática"
-
+    Verificar se aparece a categoria "Kindle Unlimited"
+    
 # Test Case 2 - Product search
 #     [Documentation]  Validar resultado da pesquisa por produto específico
 #     [Tags]           busca_produtos lista_busca
