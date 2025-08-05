@@ -24,3 +24,9 @@ Verifique que o título da página fica "${TITLE}"
     Title Should Be    title=${TITLE}
 Verificar se aparece a categoria "${CATEGORY}"
     Element Should Be Visible  locator=//div[contains(@class,'container')]/*[@alt="${CATEGORY}"]
+Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Input Text  //div[contains(@class,'field')]/*[@type="text"]  ${PRODUTO}
+Clicar no botão de pesquisa
+    Click Button  locator=//input[contains(@id,'search-submit')]
+O sistema deve exibir a tela com o resultado da pesquisa, listando o produto pesquisado
+    Element Should Be Visible  locator=//h2[@aria-label="Console Xbox Series S"]

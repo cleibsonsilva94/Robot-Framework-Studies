@@ -15,13 +15,11 @@ Test Case 1 - Access to the "Livros" menu
     Verificar se aparece a frase "Loja de Livros"
     Verifique que o título da página fica "Livros | Amazon.com.br"
     Verificar se aparece a categoria "Kindle Unlimited"
-    
-# Test Case 2 - Product search
-#     [Documentation]  Validar resultado da pesquisa por produto específico
-#     [Tags]           busca_produtos lista_busca
-#     Acessar a home page do site Amazon.com.br
-#     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
-#     Clicar no botão de pesquisa
 
-#     O site deve ser aberto corretamente
-#     O sistema deve exibir a tela com o resultado da pesquisa, listando o produto pesquisado conferir um
+Test Case 2 - Product search
+    [Documentation]  Validar resultado da pesquisa por produto específico
+    [Tags]           busca_produtos lista_busca
+    Acessar a home page do site Amazon.com.br
+    Digitar o nome de produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+    O sistema deve exibir a tela com o resultado da pesquisa, listando o produto pesquisado
