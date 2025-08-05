@@ -6,14 +6,15 @@ Test Setup     Abrir o navegador
 # Test Teardown  Fechar o navegador
 
 *** Test Cases ***
-Test Case 1 - Access to the "Electronics" menu
+Test Case 1 - Access to the "Livros" menu
     [Documentation]  Validar resultado da pesquisa por categoria e 
-    ...              verificação do retorno de categoria "Computadores e Informática"
+    ...              verificação do retorno de categoria "Kindle Unlimited"
     [Tags]           menus  categorias
     Acessar a home page do site Amazon.com.br    
     Entrar no menu "Livros"
     Verificar se aparece a frase "Loja de Livros"
-#     Verificar se aparece a categoria "Computadores e Informática"
+    Verifique que o título da página fica "Livros | Amazon.com.br"
+#   Verificar se aparece a categoria "Computadores e Informática"
 
 # Test Case 2 - Product search
 #     [Documentation]  Validar resultado da pesquisa por produto específico

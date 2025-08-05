@@ -20,3 +20,5 @@ Entrar no menu "Livros"
 Verificar se aparece a frase "Loja de Livros"
     Wait Until page Contains    text=${HEADER_LIVROS} 
     Wait Until Element Is Visible    locator=${HEADING_SENTENCE}
+Verifique que o título da página fica "${TITLE}"
+    Title Should Be    title=${TITLE}
