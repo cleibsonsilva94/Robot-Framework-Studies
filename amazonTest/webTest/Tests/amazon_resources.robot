@@ -12,6 +12,9 @@ ${HEADING_SENTENCE}  //*[contains(text(),'Loja de Livros')]
 Abrir o navegador    
     Open Browser  browser=chrome
     Maximize Browser Window
+Fechar o navegador
+    Capture Page Screenshot
+    Close Browser
 Acessar a home page do site Amazon.com.br
     Go To    url=${URL}
     Wait Until Element Is Visible  locator=${LOGO_AMAZON}
