@@ -1,91 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-06T15:47:01.730546" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-06T16:11:19.880715" rpa="false" schemaversion="5">
 <suite id="s1" name="Amazon Test" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
 <test id="s1-t1" name="Test Case 2 - Product search" line="19">
 <kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-06T15:47:02.126720" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-08-06T16:11:20.319572" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-06T15:47:02.125708" elapsed="3.991110"/>
+<status status="PASS" start="2025-08-06T16:11:20.318464" elapsed="3.118556"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-06T15:47:06.117906" elapsed="0.048833"/>
+<status status="PASS" start="2025-08-06T16:11:23.437020" elapsed="0.054721"/>
 </kw>
-<status status="PASS" start="2025-08-06T15:47:02.125708" elapsed="4.041031"/>
+<status status="PASS" start="2025-08-06T16:11:20.317456" elapsed="3.174285"/>
 </kw>
 <kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-08-06T15:47:06.171776" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<msg time="2025-08-06T16:11:23.496256" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-08-06T15:47:06.167877" elapsed="8.565084"/>
+<status status="PASS" start="2025-08-06T16:11:23.496256" elapsed="9.340856"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>locator=${LOGO_AMAZON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-06T15:47:14.734013" elapsed="0.052415"/>
+<status status="PASS" start="2025-08-06T16:11:32.837112" elapsed="0.032645"/>
 </kw>
-<status status="PASS" start="2025-08-06T15:47:06.167877" elapsed="8.618551"/>
+<status status="PASS" start="2025-08-06T16:11:23.496256" elapsed="9.373501"/>
 </kw>
 <kw name="Digitar o nome de produto &quot;Do átomo ao buraco negro&quot; no campo de pesquisa" owner="amazon_resources" source_name="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-06T15:47:14.786428" level="INFO">Typing text 'Do átomo ao buraco negro' into text field '//div[contains(@class,'field')]/*[@type="text"]'.</msg>
+<msg time="2025-08-06T16:11:32.869757" level="INFO">Typing text 'Do átomo ao buraco negro' into text field '//div[contains(@class,'field')]/*[@type="text"]'.</msg>
 <arg>//div[contains(@class,'field')]/*[@type="text"]</arg>
 <arg>${PRODUTO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-06T15:47:14.786428" elapsed="0.429638"/>
+<status status="PASS" start="2025-08-06T16:11:32.869757" elapsed="0.286457"/>
 </kw>
-<status status="PASS" start="2025-08-06T15:47:14.786428" elapsed="0.430485"/>
+<status status="PASS" start="2025-08-06T16:11:32.869757" elapsed="0.286457"/>
 </kw>
 <kw name="Clicar no botão de pesquisa" owner="amazon_resources">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-06T15:47:15.218718" level="INFO">Clicking button '//input[contains(@id,'search-submit')]'.</msg>
+<msg time="2025-08-06T16:11:33.156214" level="INFO">Clicking button '//input[contains(@id,'search-submit')]'.</msg>
 <arg>locator=//input[contains(@id,'search-submit')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-06T15:47:15.218017" elapsed="3.989553"/>
+<status status="PASS" start="2025-08-06T16:11:33.156214" elapsed="3.760837"/>
 </kw>
-<status status="PASS" start="2025-08-06T15:47:15.216913" elapsed="3.991744"/>
+<status status="PASS" start="2025-08-06T16:11:33.156214" elapsed="3.760837"/>
 </kw>
 <kw name="O sistema deve exibir a tela com o resultado da pesquisa &quot;Do átomo ao buraco negro&quot; listando o produto" owner="amazon_resources" source_name="O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-08-06T15:47:19.576473" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-08-06T15:47:19.577494" level="FAIL">The element '//div[@id="search"]/*[contains(text(), '"Do átomo ao buraco negro"')]' should be visible, but it is not.</msg>
-<arg>locator=//div[@id="search"]/*[contains(text(), '${PRODUTO}')]</arg>
+<msg time="2025-08-06T16:11:36.949341" level="INFO">Element '//span[contains(text(), '"Do átomo ao buraco negro"')]' is displayed.</msg>
+<arg>locator=//span[contains(text(), '${PRODUTO}')]</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-08-06T15:47:19.209574" elapsed="0.376531">The element '//div[@id="search"]/*[contains(text(), '"Do átomo ao buraco negro"')]' should be visible, but it is not.</status>
+<status status="PASS" start="2025-08-06T16:11:36.917051" elapsed="0.032290"/>
 </kw>
-<status status="FAIL" start="2025-08-06T15:47:19.209574" elapsed="0.377056">The element '//div[@id="search"]/*[contains(text(), '"Do átomo ao buraco negro"')]' should be visible, but it is not.</status>
+<status status="PASS" start="2025-08-06T16:11:36.917051" elapsed="0.032290"/>
 </kw>
 <kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-06T15:47:19.891492" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-06T16:11:37.166897" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-06T15:47:19.591637" elapsed="0.300856"/>
+<status status="PASS" start="2025-08-06T16:11:36.949341" elapsed="0.217556"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-06T15:47:19.892493" elapsed="2.581489"/>
+<status status="PASS" start="2025-08-06T16:11:37.166897" elapsed="2.366838"/>
 </kw>
-<status status="PASS" start="2025-08-06T15:47:19.590638" elapsed="2.885361"/>
+<status status="PASS" start="2025-08-06T16:11:36.949341" elapsed="2.584394"/>
 </kw>
 <doc>Validar resultado da pesquisa por produto específico</doc>
 <tag>busca_produtos lista_busca</tag>
-<status status="FAIL" start="2025-08-06T15:47:02.124081" elapsed="20.352454">The element '//div[@id="search"]/*[contains(text(), '"Do átomo ao buraco negro"')]' should be visible, but it is not.</status>
+<status status="PASS" start="2025-08-06T16:11:20.316322" elapsed="19.217413"/>
 </test>
 <doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="FAIL" start="2025-08-06T15:47:01.737630" elapsed="20.740426"/>
+<status status="PASS" start="2025-08-06T16:11:19.891290" elapsed="19.642445"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">busca_produtos lista_busca</stat>
+<stat pass="1" fail="0" skip="0">busca_produtos lista_busca</stat>
 </tag>
 <suite>
-<stat name="Amazon Test" id="s1" pass="0" fail="1" skip="0">Amazon Test</stat>
+<stat name="Amazon Test" id="s1" pass="1" fail="0" skip="0">Amazon Test</stat>
 </suite>
 </statistics>
 <errors>

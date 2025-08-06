@@ -32,4 +32,4 @@ Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
 Clicar no botão de pesquisa
     Click Button  locator=//input[contains(@id,'search-submit')]
 O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
-    Element Should Be Visible  locator=//div[@id="search"]/*[contains(text(), '${PRODUTO}')]
+    Element Should Be Visible  locator=//span[contains(text(), '${PRODUTO}')]
