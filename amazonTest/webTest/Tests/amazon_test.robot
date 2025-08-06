@@ -20,6 +20,6 @@ Test Case 2 - Product search
     [Documentation]  Validar resultado da pesquisa por produto específico
     [Tags]           busca_produtos lista_busca
     Acessar a home page do site Amazon.com.br
-    Digitar o nome de produto "Xbox Series S" no campo de pesquisa
+    Digitar o nome de produto "Do átomo ao buraco negro" no campo de pesquisa
     Clicar no botão de pesquisa
-    O sistema deve exibir a tela com o resultado da pesquisa, listando o produto pesquisado
+    O sistema deve exibir a tela com o resultado da pesquisa "Do átomo ao buraco negro" listando o produto
