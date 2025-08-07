@@ -2,6 +2,7 @@
 Library  SeleniumLibrary
 
 *** Variables ***
+${BROWSER}   chrome
 ${URL}  https://www.amazon.com.br/
 ${LOGO_AMAZON}  //a[@id="nav-logo-sprites"]
 ${LIVROS_BUTTON}  //a[contains(text(),'Livros')]
@@ -10,7 +11,7 @@ ${HEADING_SENTENCE}  //*[contains(text(),'Loja de Livros')]
 
 *** Keywords ***
 Abrir o navegador    
-    Open Browser  browser=chrome
+    Open Browser  browser=&{BROWSER}
     Maximize Browser Window
 Fechar o navegador
     Capture Page Screenshot
