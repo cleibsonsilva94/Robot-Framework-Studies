@@ -36,7 +36,7 @@ O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o p
     Element Should Be Visible  locator=//span[contains(text(), '${PRODUTO}')]
 
 ## GHERKIN BDD"
-Dado que estou na home page da Amazon.com.br"
+Dado que estou na home page da Amazon.com.br
     Acessar a home page do site Amazon.com.br
 Quando acessar o menu "Livros"
     Entrar no menu "Livros"
@@ -46,3 +46,9 @@ E o texto "Loja de Livros" deve ser exibido na página
     Verificar se aparece a frase "Loja de Livros"
 E a categoria "${CATEGORY}" deve ser exibida na página
     Verificar se aparece a categoria "${CATEGORY}"
+Verificar o resultado da pesquisa se está listando o produto "${PRODUTO}"
+    O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
+Adicionar o produto "Console Xbox Series S" no carrinho
+    Click Element  locator=(//span[contains(text(),'Console Xbox Series S')])[1]
+    Click Element  locator=//input[@id="add-to-cart-button"]
+    Wait Until Element Is Visible  locator=//div[@id="attach-warranty-display"]
