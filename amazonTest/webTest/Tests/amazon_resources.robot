@@ -52,3 +52,15 @@ Adicionar o produto "Console Xbox Series S" no carrinho
     Click Element  locator=(//span[contains(text(),'Console Xbox Series S')])[1]
     Click Element  locator=//input[@id="add-to-cart-button"]
     Wait Until Element Is Visible  locator=//div[@id="attach-warranty-display"]
+    Wait Until Element Is Visible  locator=(//div[@class="a-button-stack"]//span[contains(text(),' Não, obrigado(a)')])[1]
+    Click Element  locator=//span[@id="attachSiNoCoverage"]
+Direciono-me ao carrinho
+    Wait Until Element Is Visible  locator=//span[@id="attach-sidesheet-view-cart-button-announce"] 
+    Click Element  locator=//*[@id="attach-view-cart-button-form"]
+Verificar Produto que o produto "${PRODUTO}" com o valor "${VALOR}"
+    [Arguments]    ${PRODUTO}    ${VALOR}
+    ${produto_carrinho}=    Get Text    //span[@class="a-truncate-cut"]
+    ${valor_bruto}=         Get Text    (//span[contains(@class,'nowrap')])[1]
+    ${valor_limpo}=         Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', """${valor_bruto}""").group(0)
+    Should Be Equal As Strings    ${produto_carrinho}    ${PRODUTO}
+    Should Be Equal As Strings    ${valor_limpo}         ${VALOR}

@@ -32,8 +32,8 @@ Caso de Teste 03 - Adicionar Produto no Carrinho
     Clicar no botão de pesquisa
     Verificar o resultado da pesquisa se está listando o produto "Console Xbox Series S"
     Adicionar o produto "Console Xbox Series S" no carrinho
-#     Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
- 
+    Direciono-me ao carrinho
+    Verificar Produto que o produto "Console Xbox Series S" com o valor "R$ 2.662,99" 
 # Caso de Teste 04 - Remover Produto do Carrinho
 #     [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
 #     [Tags]             remover_carrinho
