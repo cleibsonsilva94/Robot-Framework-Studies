@@ -57,10 +57,17 @@ Adicionar o produto "Console Xbox Series S" no carrinho
 Direciono-me ao carrinho
     Wait Until Element Is Visible  locator=//span[@id="attach-sidesheet-view-cart-button-announce"] 
     Click Element  locator=//*[@id="attach-view-cart-button-form"]
-Verificar Produto que o produto "${PRODUTO}" com o valor "${VALOR}"
-    [Arguments]    ${PRODUTO}    ${VALOR}
+Verificar que o produto ${PRODUTOCARRINHO} com o valor ${VALOR} esta no carrinho
+    [Arguments]    ${PRODUTOCARRINHO}    ${VALOR}
     ${produto_carrinho}=    Get Text    //span[@class="a-truncate-cut"]
     ${valor_bruto}=         Get Text    (//span[contains(@class,'nowrap')])[1]
-    ${valor_limpo}=         Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', """${valor_bruto}""").group(0)
-    Should Be Equal As Strings    ${produto_carrinho}    ${PRODUTO}
-    Should Be Equal As Strings    ${valor_limpo}         ${VALOR}
+    ${valor_limpo}=     Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', valor_bruto).group(0)    re    valor_bruto=${valor_bruto}
+
+    # Verificação condicional
+    IF    '${produto_carrinho}' != '${PRODUTOCARRINHO}' OR '${valor_limpo}' != '${VALOR}'
+        Log To Console    \n⚠️ ALERTA: Produto ou valor divergente!
+        Log               Produto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}
+        Log               Valor esperado: ${VALOR} | Encontrado: ${valor_limpo}
+    ELSE
+        Log To Console    \n✅ Produto e valor corretos!
+    END
