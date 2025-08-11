@@ -61,9 +61,8 @@ Verificar produto no carrinho
     [Arguments]    ${PRODUTOCARRINHO}    ${VALOR}
     ${produto_carrinho}=    Get Text    //span[@class="a-truncate-cut"]
     ${valor_bruto}=         Get Text    (//span[contains(@class,'nowrap')])[1]
-    ${valor_limpo}=         Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', valor_bruto).group(0)    re    valor_bruto=${valor_bruto}
+    ${valor_limpo}=         Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', valor_bruto).group(0)    modules=re    valor_bruto=${valor_bruto}
 
-    # Verificação condicional
     IF    '${produto_carrinho}' != '${PRODUTOCARRINHO}' OR '${valor_limpo}' != '${VALOR}'
         Log To Console    \n⚠️ ALERTA: Produto ou valor divergente!
         Log               Produto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}

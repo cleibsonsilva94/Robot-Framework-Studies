@@ -35,7 +35,6 @@ Caso de Teste 03 - Adicionar Produto no Carrinho
     Direciono-me ao carrinho
     Verificar produto no carrinho    Console Xbox Series S    R$ 2.662,99
 
-
     
     # Caso de Teste 04 - Remover Produto do Carrinho
 #     [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
