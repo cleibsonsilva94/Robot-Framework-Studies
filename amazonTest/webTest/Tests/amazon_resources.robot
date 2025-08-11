@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library    BuiltIn
 
 *** Variables ***
 ${BROWSER}   chrome
@@ -61,12 +62,10 @@ Verificar produto no carrinho
     [Arguments]    ${PRODUTOCARRINHO}    ${VALOR}
     ${produto_carrinho}=    Get Text    //span[@class="a-truncate-cut"]
     ${valor_bruto}=         Get Text    (//span[contains(@class,'nowrap')])[1]
-    ${valor_limpo}=         Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', valor_bruto).group(0)    modules=re    valor_bruto=${valor_bruto}
+    ${valor_limpo}=         Evaluate    re.search(r'\\d{1,3}(?:\\.\\d{3})*,\\d{2}', re.sub(r'[^0-9,\\.]', '', '''${valor_bruto}''')).group(0)    modules=re
 
-    IF    '${produto_carrinho}' != '${PRODUTOCARRINHO}' OR '${valor_limpo}' != '${VALOR}'
-        Log To Console    \n⚠️ ALERTA: Produto ou valor divergente!
-        Log               Produto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}
-        Log               Valor esperado: ${VALOR} | Encontrado: ${valor_limpo}
+    IF    '${produto_carrinho}' != '${PRODUTOCARRINHO}' or '${valor_limpo}' != '${VALOR}'
+        Fail    ⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}
     ELSE
         Log To Console    \n✅ Produto e valor corretos!
     END
