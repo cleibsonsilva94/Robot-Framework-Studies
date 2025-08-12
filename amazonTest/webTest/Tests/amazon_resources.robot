@@ -39,7 +39,7 @@ Verifique que o título da página fica "${TITLE}"
     Title Should Be    ${TITLE}
 
 Verificar se aparece a categoria "${CATEGORY}"
-    Element Should Be Visible    xpath=//div[contains(@class,'container')]/*[@alt="${CATEGORY}"]
+    Element Should Be Visible    locator=//div[contains(@class,'container')]/*[@alt="${CATEGORY}"]
 
 Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
     Input Text    //div[contains(@class,'field')]/*[@type="text"]    ${PRODUTO}
@@ -48,13 +48,13 @@ Clicar no botão de pesquisa
     Click Button    //input[contains(@id,'search-submit')]
 
 O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
-    Element Should Be Visible    xpath=//span[contains(text(), '${PRODUTO}')]
+    Element Should Be Visible    locator=//span[contains(text(), ${PRODUTO})]
 
 Adicionar o produto "${PRODUTO}" no carrinho
-    Click Element    xpath=(//span[contains(text(),'${PRODUTO}')])[1]
+    Click Element    locator=(//span[contains(text(),'${PRODUTO}')])[1]
     Click Element    //input[@id="add-to-cart-button"]
     Wait Until Element Is Visible    //div[@id="attach-warranty-display"]
-    Click Element    //span[@id="attachSiNoCoverage"]
+    Click Element    //input[@id="add-to-cart-button"]
 
 Direciono-me ao carrinho
     Wait Until Element Is Visible    //span[@id="attach-sidesheet-view-cart-button-announce"]
@@ -78,8 +78,8 @@ Remover o produto "${PRODUTO}" do carrinho                         # Função (k
     Wait Until Element Is Visible    //input[@data-feature-id="item-delete-button"]    # Aguarda até que o botão de remover esteja visível na página
     Click Button    //input[@data-feature-id="item-delete-button"]                    # Clica no botão para remover o produto
 
-Verificar se o carrinho fica vazio                                 # Função (keyword) para validar que o carrinho está vazio após remoção
-    ${ItensNoCarrinho}=    Get Text    xpath=//a[@id="nav-cart"]//span[contains(@class,'nav-cart-count')]    # Obtém o número de itens no carrinho
+Verificar se o carrinho fica vazio                                # Função (keyword) para validar que o carrinho está vazio após remoção
+    ${ItensNoCarrinho}=    Get Text    locator=//a[@id="nav-cart"]//span[contains(@class,'nav-cart-count')]    # Obtém o número de itens no carrinho
     Should Be Equal As Integers    ${ItensNoCarrinho}    0          # Verifica se a quantidade de itens é igual a zero (carrinho vazio)
-    Wait Until Page Does Not Contain Element    xpath=//span[contains(text(),'${PRODUTO_TESTE}')]    timeout=5s    # Aguarda até que o produto não esteja mais listado na página
+    Wait Until Page Does Not Contain Element    locator=//span[contains(text(),'${PRODUTO_TESTE}')]    timeout=5s    # Aguarda até que o produto não esteja mais listado na página
     Log To Console    \n✅ O carrinho está vazio e o produto não está presente!        # Exibe mensagem de sucesso no console

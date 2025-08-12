@@ -9,6 +9,7 @@ Test Teardown  Fechar o navegador
 *** Test Cases ***
 Caso de Teste 01 - Acessar o menu "Livros"
     Acessar a home page do site Amazon.com.br
+
     Entrar no menu "Livros"
     Verificar se aparece a frase "Loja de Livros"
     Verifique que o título da página fica "Livros | Amazon.com.br"
@@ -24,20 +25,20 @@ Caso de Teste 03 - Adicionar Produto no Carrinho
     Acessar a home page do site Amazon.com.br
     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
     Clicar no botão de pesquisa
-    Verificar o resultado da pesquisa se está listando o produto "${PRODUTO_TESTE}"
-    Adicionar o produto "${PRODUTO_TESTE}" no carrinho
+    O sistema deve exibir a tela com o resultado da pesquisa "Console Xbox Series S" listando o produto
+    Adicionar o produto "Console Xbox Series S" no carrinho
     Direciono-me ao carrinho
-    Verificar produto no carrinho    ${PRODUTO_TESTE}    ${VALOR_TESTE}
+    Verificar produto no carrinho    Console Xbox Series S    2.662,99
 
 Caso de Teste 04 - Remover Produto do Carrinho
     Acessar a home page do site Amazon.com.br
     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
     Clicar no botão de pesquisa
-    Verificar o resultado da pesquisa se está listando o produto "${PRODUTO_TESTE}"
-    Adicionar o produto "${PRODUTO_TESTE}" no carrinho
+    O sistema deve exibir a tela com o resultado da pesquisa "Console Xbox Series S" listando o produto
+    Adicionar o produto "Console Xbox Series S" no carrinho
     Direciono-me ao carrinho
-    Verificar se o produto "${PRODUTO_TESTE}" foi adicionado com sucesso    ${PRODUTO_TESTE}    ${VALOR_TESTE}
-    Remover o produto "${PRODUTO_TESTE}" do carrinho
+    Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso    Console Xbox Series S    2.662,99
+    Remover o produto "Console Xbox Series S" do carrinho    
     Verificar se o carrinho fica vazio
 
 #     ## 📌 Comandos úteis para rodar testes com Robot Framework
