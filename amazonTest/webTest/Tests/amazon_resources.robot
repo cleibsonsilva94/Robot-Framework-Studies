@@ -70,16 +70,16 @@ Verificar produto no carrinho
     ...    Fail    ⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}
     Log To Console    \n✅ Produto e valor corretos!
 
-Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
-    [Arguments]    ${PRODUTO}    ${VALOR}
-    Verificar produto no carrinho    ${PRODUTO}    ${VALOR}
+Verificar se o produto "${PRODUTO}" foi adicionado com sucesso    # Função (keyword) que recebe o nome e valor do produto e verifica se ele foi adicionado ao carrinho
+    [Arguments]    ${PRODUTO}    ${VALOR}                          # Define os argumentos que serão recebidos: nome do produto e valor
+    Verificar produto no carrinho    ${PRODUTO}    ${VALOR}        # Chama outra keyword para conferir se o produto e valor estão corretos no carrinho
 
-Remover o produto "${PRODUTO}" do carrinho
-    Wait Until Element Is Visible    //input[@data-feature-id="item-delete-button"]
-    Click Button    //input[@data-feature-id="item-delete-button"]
+Remover o produto "${PRODUTO}" do carrinho                         # Função (keyword) para remover o produto informado do carrinho
+    Wait Until Element Is Visible    //input[@data-feature-id="item-delete-button"]    # Aguarda até que o botão de remover esteja visível na página
+    Click Button    //input[@data-feature-id="item-delete-button"]                    # Clica no botão para remover o produto
 
-Verificar se o carrinho fica vazio
-    ${ItensNoCarrinho}=    Get Text    xpath=//a[@id="nav-cart"]//span[contains(@class,'nav-cart-count')]
-    Should Be Equal As Integers    ${ItensNoCarrinho}    0
-    Wait Until Page Does Not Contain Element    xpath=//span[contains(text(),'${PRODUTO_TESTE}')]    timeout=5s
-    Log To Console    \n✅ O carrinho está vazio e o produto não está presente!
+Verificar se o carrinho fica vazio                                 # Função (keyword) para validar que o carrinho está vazio após remoção
+    ${ItensNoCarrinho}=    Get Text    xpath=//a[@id="nav-cart"]//span[contains(@class,'nav-cart-count')]    # Obtém o número de itens no carrinho
+    Should Be Equal As Integers    ${ItensNoCarrinho}    0          # Verifica se a quantidade de itens é igual a zero (carrinho vazio)
+    Wait Until Page Does Not Contain Element    xpath=//span[contains(text(),'${PRODUTO_TESTE}')]    timeout=5s    # Aguarda até que o produto não esteja mais listado na página
+    Log To Console    \n✅ O carrinho está vazio e o produto não está presente!        # Exibe mensagem de sucesso no console
