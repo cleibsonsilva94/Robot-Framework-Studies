@@ -69,3 +69,18 @@ Verificar produto no carrinho
     ELSE
         Log To Console    \n✅ Produto e valor corretos!
     END
+Verificar se o produto "${ProdutoNoCarrino}" adicionado com sucesso
+    Verificar produto no carrinho
+Remover o produto "${ProdutoNoCarrino}" do carrinho
+    Wait Until Element Is Visible  locator=//input[@data-feature-id="item-delete-button"]
+    Click Button  locator=//input[@data-feature-id="item-delete-button"]
+
+Verificar se o carrinho fica vazio
+
+    ${ItensNoCarrinho}=   Get Text  class="nav-cart-count nav-progressive-attribute nav-progressive-content nav-cart-0"
+    
+     IF    '${ItensNoCarrinho}' != "0"
+        Fail    ⚠️ ALERTA: Exite produto no carrinho!
+    ELSE
+        Log To Console    \n✅ O carrinho está vazio!
+    END
