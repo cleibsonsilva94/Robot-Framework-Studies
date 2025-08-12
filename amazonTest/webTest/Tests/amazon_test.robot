@@ -6,47 +6,39 @@ Test Setup     Abrir o navegador
 Test Teardown  Fechar o navegador 
 
 *** Test Cases ***
-Test Case 1 - Access to the "Livros" menu
-    [Documentation]  Validar resultado da pesquisa por categoria e 
-    ...              verificação do retorno de categoria "Kindle Unlimited"
-    [Tags]           menus  categorias
-    Acessar a home page do site Amazon.com.br    
+*** Test Cases ***
+Caso de Teste 01 - Acessar o menu "Livros"
+    Acessar a home page do site Amazon.com.br
     Entrar no menu "Livros"
     Verificar se aparece a frase "Loja de Livros"
     Verifique que o título da página fica "Livros | Amazon.com.br"
     Verificar se aparece a categoria "Kindle Unlimited"
 
-Test Case 2 - Product search
-    [Documentation]  Validar resultado da pesquisa por produto específico
-    [Tags]           busca_produtos lista_busca
+Caso de Teste 02 - Pesquisa de produto
     Acessar a home page do site Amazon.com.br
     Digitar o nome de produto "Do átomo ao buraco negro" no campo de pesquisa
     Clicar no botão de pesquisa
     O sistema deve exibir a tela com o resultado da pesquisa "Do átomo ao buraco negro" listando o produto
 
 Caso de Teste 03 - Adicionar Produto no Carrinho
-    [Documentation]    Esse teste verifica a adição de um produto no carrinho de compras
-    [Tags]             adicionar_carrinho
     Acessar a home page do site Amazon.com.br
     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
     Clicar no botão de pesquisa
-    Verificar o resultado da pesquisa se está listando o produto "Console Xbox Series S"
-    Adicionar o produto "Console Xbox Series S" no carrinho
+    Verificar o resultado da pesquisa se está listando o produto "${PRODUTO_TESTE}"
+    Adicionar o produto "${PRODUTO_TESTE}" no carrinho
     Direciono-me ao carrinho
-    Verificar produto no carrinho    Console Xbox Series S  2.662,99
+    Verificar produto no carrinho    ${PRODUTO_TESTE}    ${VALOR_TESTE}
 
- Caso de Teste 04 - Remover Produto do Carrinho
-    [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
-    [Tags]             remover_carrinho
+Caso de Teste 04 - Remover Produto do Carrinho
     Acessar a home page do site Amazon.com.br
     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
     Clicar no botão de pesquisa
-    Verificar o resultado da pesquisa se está listando o produto "Console Xbox Series S"
-    Adicionar o produto "Console Xbox Series S" no carrinho
-    Verificar se o produto  Console Xbox Series S foi  adicionado com sucesso
-    Remover o produto  Console Xbox Series S  do carrinho
+    Verificar o resultado da pesquisa se está listando o produto "${PRODUTO_TESTE}"
+    Adicionar o produto "${PRODUTO_TESTE}" no carrinho
+    Direciono-me ao carrinho
+    Verificar se o produto "${PRODUTO_TESTE}" foi adicionado com sucesso    ${PRODUTO_TESTE}    ${VALOR_TESTE}
+    Remover o produto "${PRODUTO_TESTE}" do carrinho
     Verificar se o carrinho fica vazio
-
 
 #     ## 📌 Comandos úteis para rodar testes com Robot Framework
 

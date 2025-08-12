@@ -1,19 +1,27 @@
 *** Settings ***
-Library  SeleniumLibrary
-Library    BuiltIn
+Documentation  Essa suite testa o site da Amazon.com.br
+Library        SeleniumLibrary
+Library        BuiltIn
+
+Test Setup     Abrir o navegador
+Test Teardown  Fechar o navegador
 
 *** Variables ***
-${BROWSER}   chrome
-${URL}  https://www.amazon.com.br/
-${LOGO_AMAZON}  //a[@id="nav-logo-sprites"]
-${LIVROS_BUTTON}  //a[contains(text(),'Livros')]
-${HEADER_LIVROS}  Loja de Livros
+${BROWSER}          chrome
+${URL}              https://www.amazon.com.br/
+${LOGO_AMAZON}      //a[@id="nav-logo-sprites"]
+${LIVROS_BUTTON}    //a[contains(text(),'Livros')]
+${HEADER_LIVROS}    Loja de Livros
 ${HEADING_SENTENCE}  //*[contains(text(),'Loja de Livros')]
+${PRODUTO_TESTE}    Console Xbox Series S
+${VALOR_TESTE}      2.662,99
 
 *** Keywords ***
-Abrir o navegador    
-    Open Browser  browser=${BROWSER}
+Abrir o navegador
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
+    Wait Until Element Is Visible    ${LOGO_AMAZON}
+
 Fechar o navegador
     Capture Page Screenshot
     Close Browser
@@ -21,68 +29,57 @@ Acessar a home page do site Amazon.com.br
     Go To    url=${URL}
     Wait Until Element Is Visible  locator=${LOGO_AMAZON}
 Entrar no menu "Livros"
-    Click Element  locator=${LIVROS_BUTTON}
-Verificar se aparece a frase "Loja de Livros"
-    Wait Until page Contains    text=${HEADER_LIVROS} 
-    Wait Until Element Is Visible    locator=${HEADING_SENTENCE}
-Verifique que o título da página fica "${TITLE}"
-    Title Should Be    title=${TITLE}
-Verificar se aparece a categoria "${CATEGORY}"
-    Element Should Be Visible  locator=//div[contains(@class,'container')]/*[@alt="${CATEGORY}"]
-Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
-    Input Text  //div[contains(@class,'field')]/*[@type="text"]  ${PRODUTO}
-Clicar no botão de pesquisa
-    Click Button  locator=//input[contains(@id,'search-submit')]
-O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
-    Element Should Be Visible  locator=//span[contains(text(), '${PRODUTO}')]
+    Click Element    ${LIVROS_BUTTON}
 
-## GHERKIN BDD"
-Dado que estou na home page da Amazon.com.br
-    Acessar a home page do site Amazon.com.br
-Quando acessar o menu "Livros"
-    Entrar no menu "Livros"
-Então o título da página deve ficar "${TITLE}"
-    Verifique que o título da página fica "${TITLE}"
-E o texto "Loja de Livros" deve ser exibido na página
-    Verificar se aparece a frase "Loja de Livros"
-E a categoria "${CATEGORY}" deve ser exibida na página
-    Verificar se aparece a categoria "${CATEGORY}"
-Verificar o resultado da pesquisa se está listando o produto "${PRODUTO}"
-    O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
-Adicionar o produto "Console Xbox Series S" no carrinho
-    Click Element  locator=(//span[contains(text(),'Console Xbox Series S')])[1]
-    Click Element  locator=//input[@id="add-to-cart-button"]
-    Wait Until Element Is Visible  locator=//div[@id="attach-warranty-display"]
-    Wait Until Element Is Visible  locator=(//div[@class="a-button-stack"]//span[contains(text(),' Não, obrigado(a)')])[1]
-    Click Element  locator=//span[@id="attachSiNoCoverage"]
+Verificar se aparece a frase "Loja de Livros"
+    Wait Until Page Contains    ${HEADER_LIVROS}
+    Wait Until Element Is Visible    ${HEADING_SENTENCE}
+
+Verifique que o título da página fica "${TITLE}"
+    Title Should Be    ${TITLE}
+
+Verificar se aparece a categoria "${CATEGORY}"
+    Element Should Be Visible    xpath=//div[contains(@class,'container')]/*[@alt="${CATEGORY}"]
+
+Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Input Text    //div[contains(@class,'field')]/*[@type="text"]    ${PRODUTO}
+
+Clicar no botão de pesquisa
+    Click Button    //input[contains(@id,'search-submit')]
+
+O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
+    Element Should Be Visible    xpath=//span[contains(text(), '${PRODUTO}')]
+
+Adicionar o produto "${PRODUTO}" no carrinho
+    Click Element    xpath=(//span[contains(text(),'${PRODUTO}')])[1]
+    Click Element    //input[@id="add-to-cart-button"]
+    Wait Until Element Is Visible    //div[@id="attach-warranty-display"]
+    Click Element    //span[@id="attachSiNoCoverage"]
+
 Direciono-me ao carrinho
-    Wait Until Element Is Visible  locator=//span[@id="attach-sidesheet-view-cart-button-announce"] 
-    Click Element  locator=//*[@id="attach-view-cart-button-form"]
+    Wait Until Element Is Visible    //span[@id="attach-sidesheet-view-cart-button-announce"]
+    Click Element    //*[@id="attach-view-cart-button-form"]
+
 Verificar produto no carrinho
     [Arguments]    ${PRODUTOCARRINHO}    ${VALOR}
     ${produto_carrinho}=    Get Text    //span[@class="a-truncate-cut"]
     ${valor_bruto}=         Get Text    (//span[contains(@class,'nowrap')])[1]
-    ${valor_limpo}=         Evaluate    re.search(r'\\d{1,3}(?:\\.\\d{3})*,\\d{2}', re.sub(r'[^0-9,\\.]', '', '''${valor_bruto}''')).group(0)    modules=re
+    ${valor_limpo}=         Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', '''${valor_bruto}''').group(0)    modules=re
 
-    IF    '${produto_carrinho}' != '${PRODUTOCARRINHO}' or '${valor_limpo}' != '${VALOR}'
-        Fail    ⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}
-    ELSE
-        Log To Console    \n✅ Produto e valor corretos!
-    END
-Verificar se o produto "${ProdutoNoCarrino}" adicionado com sucesso
-    Verificar produto no carrinho
-Remover o produto "${ProdutoNoCarrino}" do carrinho
-    Wait Until Element Is Visible  locator=//input[@data-feature-id="item-delete-button"]
-    Click Button  locator=//input[@data-feature-id="item-delete-button"]
+    Run Keyword If    '${produto_carrinho}' != '${PRODUTOCARRINHO}' or '${valor_limpo}' != '${VALOR}'
+    ...    Fail    ⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}
+    Log To Console    \n✅ Produto e valor corretos!
+
+Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
+    [Arguments]    ${PRODUTO}    ${VALOR}
+    Verificar produto no carrinho    ${PRODUTO}    ${VALOR}
+
+Remover o produto "${PRODUTO}" do carrinho
+    Wait Until Element Is Visible    //input[@data-feature-id="item-delete-button"]
+    Click Button    //input[@data-feature-id="item-delete-button"]
 
 Verificar se o carrinho fica vazio
-    # Captura o número de itens no carrinho, usando XPath genérico
-    ${ItensNoCarrinho}=   Get Text    xpath=//span[contains(@class,'nav-cart-count')]
-    
-    # Valida que é zero
+    ${ItensNoCarrinho}=    Get Text    xpath=//a[@id="nav-cart"]//span[contains(@class,'nav-cart-count')]
     Should Be Equal As Integers    ${ItensNoCarrinho}    0
-
-    # Garante que o nome do produto não está visível no carrinho
-    Page Should Not Contain Element    xpath=//span[contains(text(),'Console Xbox Series S')]
-
+    Wait Until Page Does Not Contain Element    xpath=//span[contains(text(),'${PRODUTO_TESTE}')]    timeout=5s
     Log To Console    \n✅ O carrinho está vazio e o produto não está presente!
