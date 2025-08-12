@@ -76,11 +76,13 @@ Remover o produto "${ProdutoNoCarrino}" do carrinho
     Click Button  locator=//input[@data-feature-id="item-delete-button"]
 
 Verificar se o carrinho fica vazio
-
-    ${ItensNoCarrinho}=   Get Text  class="nav-cart-count nav-progressive-attribute nav-progressive-content nav-cart-0"
+    # Captura o número de itens no carrinho, usando XPath genérico
+    ${ItensNoCarrinho}=   Get Text    xpath=//span[contains(@class,'nav-cart-count')]
     
-     IF    '${ItensNoCarrinho}' != "0"
-        Fail    ⚠️ ALERTA: Exite produto no carrinho!
-    ELSE
-        Log To Console    \n✅ O carrinho está vazio!
-    END
+    # Valida que é zero
+    Should Be Equal As Integers    ${ItensNoCarrinho}    0
+
+    # Garante que o nome do produto não está visível no carrinho
+    Page Should Not Contain Element    xpath=//span[contains(text(),'Console Xbox Series S')]
+
+    Log To Console    \n✅ O carrinho está vazio e o produto não está presente!
