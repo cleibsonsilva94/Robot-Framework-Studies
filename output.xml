@@ -1,226 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-12T14:23:44.470112" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-14T09:29:06.004285" rpa="false" schemaversion="5">
 <suite id="s1" name="Amazon Test" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
-<test id="s1-t1" name="Caso de Teste 04 - Remover Produto do Carrinho" line="33">
+<test id="s1-t1" name="Caso de Teste 03 - Adicionar Produto no Carrinho" line="24">
 <kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:23:45.052155" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/'.</msg>
+<msg time="2025-08-14T09:29:06.518086" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-12T14:23:45.052155" elapsed="12.904532"/>
+<status status="PASS" start="2025-08-14T09:29:06.518086" elapsed="9.432478"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-12T14:23:57.956687" elapsed="0.058426"/>
+<status status="PASS" start="2025-08-14T09:29:15.951974" elapsed="0.104193"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGO_AMAZON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-12T14:23:58.015113" elapsed="0.244034"/>
+<status status="PASS" start="2025-08-14T09:29:16.056167" elapsed="0.268543"/>
 </kw>
-<status status="PASS" start="2025-08-12T14:23:45.051076" elapsed="13.208071"/>
+<status status="PASS" start="2025-08-14T09:29:06.518086" elapsed="9.807623"/>
 </kw>
 <kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:23:58.262184" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<msg time="2025-08-14T09:29:16.338108" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-08-12T14:23:58.261167" elapsed="3.812352"/>
+<status status="PASS" start="2025-08-14T09:29:16.337106" elapsed="2.042138"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>locator=${LOGO_AMAZON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-12T14:24:02.074692" elapsed="0.026193"/>
+<status status="PASS" start="2025-08-14T09:29:18.379244" elapsed="0.092379"/>
 </kw>
-<status status="PASS" start="2025-08-12T14:23:58.260140" elapsed="3.840745"/>
+<status status="PASS" start="2025-08-14T09:29:16.337106" elapsed="2.134517"/>
 </kw>
 <kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa" owner="amazon_resources" source_name="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:02.102894" level="INFO">Typing text 'Xbox Series S' into text field '//div[contains(@class,'field')]/*[@type="text"]'.</msg>
+<msg time="2025-08-14T09:29:18.472621" level="INFO">Typing text 'Xbox Series S' into text field '//div[contains(@class,'field')]/*[@type="text"]'.</msg>
 <arg>//div[contains(@class,'field')]/*[@type="text"]</arg>
 <arg>${PRODUTO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-12T14:24:02.101991" elapsed="0.251153"/>
+<status status="PASS" start="2025-08-14T09:29:18.472621" elapsed="0.256274"/>
 </kw>
-<status status="PASS" start="2025-08-12T14:24:02.101991" elapsed="0.252154"/>
+<status status="PASS" start="2025-08-14T09:29:18.471623" elapsed="0.257272"/>
 </kw>
 <kw name="Clicar no botão de pesquisa" owner="amazon_resources">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:02.356147" level="INFO">Clicking button '//input[contains(@id,'search-submit')]'.</msg>
+<msg time="2025-08-14T09:29:18.731019" level="INFO">Clicking button '//input[contains(@id,'search-submit')]'.</msg>
 <arg>//input[contains(@id,'search-submit')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-12T14:24:02.355147" elapsed="4.807519"/>
+<status status="PASS" start="2025-08-14T09:29:18.729894" elapsed="3.529686"/>
 </kw>
-<status status="PASS" start="2025-08-12T14:24:02.355147" elapsed="4.807519"/>
+<status status="PASS" start="2025-08-14T09:29:18.729894" elapsed="3.530694"/>
 </kw>
 <kw name="O sistema deve exibir a tela com o resultado da pesquisa &quot;Console Xbox Series S&quot; listando o produto" owner="amazon_resources" source_name="O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:07.248987" level="INFO">Element '//span[contains(text(), "Console Xbox Series S")]' is displayed.</msg>
+<msg time="2025-08-14T09:29:22.319721" level="INFO">Element '//span[contains(text(), "Console Xbox Series S")]' is displayed.</msg>
 <arg>locator=//span[contains(text(), ${PRODUTO})]</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-12T14:24:07.164668" elapsed="0.084319"/>
+<status status="PASS" start="2025-08-14T09:29:22.261579" elapsed="0.058142"/>
 </kw>
-<status status="PASS" start="2025-08-12T14:24:07.163674" elapsed="0.085313"/>
+<status status="PASS" start="2025-08-14T09:29:22.261579" elapsed="0.058142"/>
 </kw>
 <kw name="Adicionar o produto &quot;Console Xbox Series S&quot; no carrinho" owner="amazon_resources" source_name="Adicionar o produto &quot;${PRODUTO}&quot; no carrinho">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:07.251009" level="INFO">Clicking element '(//span[contains(text(),'Console Xbox Series S')])[1]'.</msg>
+<msg time="2025-08-14T09:29:22.321467" level="INFO">Clicking element '(//span[contains(text(),'Console Xbox Series S')])[1]'.</msg>
 <arg>locator=(//span[contains(text(),'${PRODUTO}')])[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-12T14:24:07.251009" elapsed="6.725396"/>
+<status status="PASS" start="2025-08-14T09:29:22.321467" elapsed="5.118694"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:13.977405" level="INFO">Clicking element '//input[@id="add-to-cart-button"]'.</msg>
+<msg time="2025-08-14T09:29:27.441164" level="INFO">Clicking element '//input[@id="add-to-cart-button"]'.</msg>
 <arg>//input[@id="add-to-cart-button"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-12T14:24:13.977405" elapsed="0.384270"/>
+<status status="PASS" start="2025-08-14T09:29:27.440161" elapsed="0.274577"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//div[@id="attach-warranty-display"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-12T14:24:14.361675" elapsed="1.056402"/>
+<status status="PASS" start="2025-08-14T09:29:27.714738" elapsed="0.829232"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:15.419073" level="INFO">Clicking element '//span[@id="attachSiNoCoverage"]'.</msg>
-<msg time="2025-08-12T14:24:15.832575" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-08-12T14:24:15.833180" level="FAIL">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=138.0.7204.184); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
-Stacktrace:
-	GetHandleVerifier [0x0x7ff7d987e415+77285]
-	GetHandleVerifier [0x0x7ff7d987e470+77376]
-	(No symbol) [0x0x7ff7d964989c]
-	(No symbol) [0x0x7ff7d96a1904]
-	(No symbol) [0x0x7ff7d9693458]
-	(No symbol) [0x0x7ff7d96c860a]
-	(No symbol) [0x0x7ff7d9692d06]
-	(No symbol) [0x0x7ff7d96c8820]
-	(No symbol) [0x0x7ff7d96f087f]
-	(No symbol) [0x0x7ff7d96c83e3]
-	(No symbol) [0x0x7ff7d9691521]
-	(No symbol) [0x0x7ff7d96922b3]
-	GetHandleVerifier [0x0x7ff7d9b61efd+3107021]
-	GetHandleVerifier [0x0x7ff7d9b5c29d+3083373]
-	GetHandleVerifier [0x0x7ff7d9b7bedd+3213485]
-	GetHandleVerifier [0x0x7ff7d989884e+184862]
-	GetHandleVerifier [0x0x7ff7d98a055f+216879]
-	GetHandleVerifier [0x0x7ff7d9887084+113236]
-	GetHandleVerifier [0x0x7ff7d9887239+113673]
-	GetHandleVerifier [0x0x7ff7d986e298+11368]
-	BaseThreadInitThunk [0x0x7ffd57ba259d+29]
-	RtlUserThreadStart [0x0x7ffd590eaf78+40]
-</msg>
-<arg>//span[@id="attachSiNoCoverage"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-08-12T14:24:15.419073" elapsed="0.437077">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=138.0.7204.184); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
-Stacktrace:
-	GetHandleVerifier [0x0x7ff7d987e415+77285]
-	GetHandleVerifier [0x0x7ff7d987e470+77376]
-	(No symbol) [0x0x7ff7d964989c]
-	(No symbol) [0x0x7ff7d96a1904]
-	(No symbol) [0x0x7ff7d9693458]
-	(No symbol) [0x0x7ff7d96c860a]
-	(No symbol) [0x0x7ff7d9692d06]
-	(No symbol) [0x0x7ff7d96c8820]
-	(No symbol) [0x0x7ff7d96f087f]
-	(No symbol) [0x0x7ff7d96c83e3]
-	(No symbol) [0x0x7ff7d9691521]
-	(No symbol) [0x0x7ff7d96922b3]
-	GetHandleVerifier [0x0x7ff7d9b61efd+3107021]
-	GetHandleVerifier [0x0x7ff7d9b5c29d+3083373]
-	GetHandleVerifier [0x0x7ff7d9b7bedd+3213485]
-	GetHandleVerifier [0x0x7ff7d989884e+184862]
-	GetHandleVerifier [0x0x7ff7d98a055f+216879]
-	GetHandleVerifier [0x0x7ff7d9887084+113236]
-	GetHandleVerifier [0x0x7ff7d9887239+113673]
-	GetHandleVerifier [0x0x7ff7d986e298+11368]
-	BaseThreadInitThunk [0x0x7ffd57ba259d+29]
-	RtlUserThreadStart [0x0x7ffd590eaf78+40]
-</status>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>(//input[@class="a-button-input"])[16]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T09:29:28.543970" elapsed="0.367130"/>
 </kw>
-<status status="FAIL" start="2025-08-12T14:24:07.250504" elapsed="8.605646">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=138.0.7204.184); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
-Stacktrace:
-	GetHandleVerifier [0x0x7ff7d987e415+77285]
-	GetHandleVerifier [0x0x7ff7d987e470+77376]
-	(No symbol) [0x0x7ff7d964989c]
-	(No symbol) [0x0x7ff7d96a1904]
-	(No symbol) [0x0x7ff7d9693458]
-	(No symbol) [0x0x7ff7d96c860a]
-	(No symbol) [0x0x7ff7d9692d06]
-	(No symbol) [0x0x7ff7d96c8820]
-	(No symbol) [0x0x7ff7d96f087f]
-	(No symbol) [0x0x7ff7d96c83e3]
-	(No symbol) [0x0x7ff7d9691521]
-	(No symbol) [0x0x7ff7d96922b3]
-	GetHandleVerifier [0x0x7ff7d9b61efd+3107021]
-	GetHandleVerifier [0x0x7ff7d9b5c29d+3083373]
-	GetHandleVerifier [0x0x7ff7d9b7bedd+3213485]
-	GetHandleVerifier [0x0x7ff7d989884e+184862]
-	GetHandleVerifier [0x0x7ff7d98a055f+216879]
-	GetHandleVerifier [0x0x7ff7d9887084+113236]
-	GetHandleVerifier [0x0x7ff7d9887239+113673]
-	GetHandleVerifier [0x0x7ff7d986e298+11368]
-	BaseThreadInitThunk [0x0x7ffd57ba259d+29]
-	RtlUserThreadStart [0x0x7ffd590eaf78+40]
-</status>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T09:29:28.911100" level="INFO">Clicking button '(//input[@class="a-button-input"])[16]'.</msg>
+<arg>(//input[@class="a-button-input"])[16]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T09:29:28.911100" elapsed="0.144296"/>
+</kw>
+<status status="PASS" start="2025-08-14T09:29:22.320721" elapsed="6.734675"/>
 </kw>
 <kw name="Direciono-me ao carrinho" owner="amazon_resources">
-<status status="NOT RUN" start="2025-08-12T14:24:15.858062" elapsed="0.001001"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@id="attach-sidesheet-view-cart-button-announce"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T09:29:29.058024" elapsed="1.885705"/>
 </kw>
-<kw name="Verificar se o produto &quot;Console Xbox Series S&quot; foi adicionado com sucesso" owner="amazon_resources" source_name="Verificar se o produto &quot;${PRODUTO}&quot; foi adicionado com sucesso">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T09:29:30.944716" level="INFO">Clicking element '//*[@id="attach-view-cart-button-form"]'.</msg>
+<arg>//*[@id="attach-view-cart-button-form"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T09:29:30.943729" elapsed="2.627213"/>
+</kw>
+<status status="PASS" start="2025-08-14T09:29:29.056408" elapsed="4.515618"/>
+</kw>
+<kw name="Verificar produto no carrinho" owner="amazon_resources">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T09:29:33.645572" level="INFO">${produto_carrinho} = Console Xbox Series S</msg>
+<var>${produto_carrinho}</var>
+<arg>//span[@class="a-truncate-cut"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T09:29:33.575025" elapsed="0.071547"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T09:29:33.689169" level="INFO">${valor_bruto} = R$ 2.662,99</msg>
+<var>${valor_bruto}</var>
+<arg>(//span[contains(@class,'nowrap')])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T09:29:33.646572" elapsed="0.042597"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T09:29:33.691186" level="FAIL">Evaluating expression "re.search(r'd{1,3}(?:.d{3})*,d{2}', '''R$ 2.662,99''').group(0)" failed: AttributeError: 'NoneType' object has no attribute 'group'</msg>
+<var>${valor_limpo}</var>
+<arg>re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', '''${valor_bruto}''').group(0)</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2025-08-14T09:29:33.690174" elapsed="0.006258">Evaluating expression "re.search(r'd{1,3}(?:.d{3})*,d{2}', '''R$ 2.662,99''').group(0)" failed: AttributeError: 'NoneType' object has no attribute 'group'</status>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${produto_carrinho}' != '${PRODUTOCARRINHO}' or '${valor_limpo}' != '${VALOR}'</arg>
+<arg>Fail</arg>
+<arg>⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-08-14T09:29:33.697423" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n✅ Produto e valor corretos!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-14T09:29:33.698442" elapsed="0.000000"/>
+</kw>
 <arg>Console Xbox Series S</arg>
 <arg>2.662,99</arg>
-<status status="NOT RUN" start="2025-08-12T14:24:15.860069" elapsed="0.000740"/>
-</kw>
-<kw name="Remover o produto &quot;Console Xbox Series S&quot; do carrinho" owner="amazon_resources" source_name="Remover o produto &quot;${PRODUTO}&quot; do carrinho">
-<status status="NOT RUN" start="2025-08-12T14:24:15.861836" elapsed="0.000997"/>
-</kw>
-<kw name="Verificar se o carrinho fica vazio" owner="amazon_resources">
-<status status="NOT RUN" start="2025-08-12T14:24:15.863820" elapsed="0.000000"/>
+<status status="FAIL" start="2025-08-14T09:29:33.572942" elapsed="0.125500">Evaluating expression "re.search(r'd{1,3}(?:.d{3})*,d{2}', '''R$ 2.662,99''').group(0)" failed: AttributeError: 'NoneType' object has no attribute 'group'</status>
 </kw>
 <kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-12T14:24:16.074258" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-14T09:29:33.922190" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-12T14:24:15.868075" elapsed="0.207181"/>
+<status status="PASS" start="2025-08-14T09:29:33.700455" elapsed="0.222739"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-12T14:24:16.075256" elapsed="2.657718"/>
+<status status="PASS" start="2025-08-14T09:29:33.923194" elapsed="2.641288"/>
 </kw>
-<status status="PASS" start="2025-08-12T14:24:15.866057" elapsed="2.868020"/>
+<status status="PASS" start="2025-08-14T09:29:33.700455" elapsed="2.864027"/>
 </kw>
-<status status="FAIL" start="2025-08-12T14:23:45.048551" elapsed="33.686430">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=138.0.7204.184); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
-Stacktrace:
-	GetHandleVerifier [0x0x7ff7d987e415+77285]
-	GetHandleVerifier [0x0x7ff7d987e470+77376]
-	(No symbol) [0x0x7ff7d964989c]
-	(No symbol) [0x0x7ff7d96a1904]
-	(No symbol) [0x0x7ff7d9693458]
-	(No symbol) [0x0x7ff7d96c860a]
-	(No symbol) [0x0x7ff7d9692d06]
-	(No symbol) [0x0x7ff7d96c8820]
-	(No symbol) [0x0x7ff7d96f087f]
-	(No symbol) [0x0x7ff7d96c83e3]
-	(No symbol) [0x0x7ff7d9691521]
-	(No symbol) [0x0x7ff7d96922b3]
-	GetHandleVerifier [0x0x7ff7d9b61efd+3107021]
-	GetHandleVerifier [0x0x7ff7d9b5c29d+3083373]
-	GetHandleVerifier [0x0x7ff7d9b7bedd+3213485]
-	GetHandleVerifier [0x0x7ff7d989884e+184862]
-	GetHandleVerifier [0x0x7ff7d98a055f+216879]
-	GetHandleVerifier [0x0x7ff7d9887084+113236]
-	GetHandleVerifier [0x0x7ff7d9887239+113673]
-	GetHandleVerifier [0x0x7ff7d986e298+11368]
-	BaseThreadInitThunk [0x0x7ffd57ba259d+29]
-	RtlUserThreadStart [0x0x7ffd590eaf78+40]
-</status>
+<status status="FAIL" start="2025-08-14T09:29:06.518086" elapsed="30.046396">Evaluating expression "re.search(r'd{1,3}(?:.d{3})*,d{2}', '''R$ 2.662,99''').group(0)" failed: AttributeError: 'NoneType' object has no attribute 'group'</status>
 </test>
 <doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="FAIL" start="2025-08-12T14:23:44.479012" elapsed="34.268370"/>
+<status status="FAIL" start="2025-08-14T09:29:06.010356" elapsed="30.562728"/>
 </suite>
 <statistics>
 <total>
@@ -233,7 +175,5 @@ Stacktrace:
 </suite>
 </statistics>
 <errors>
-<msg time="2025-08-12T14:23:44.516840" level="ERROR">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_resources.robot' on line 6: Setting 'Test Setup' is not allowed in resource file.</msg>
-<msg time="2025-08-12T14:23:44.522839" level="ERROR">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_resources.robot' on line 7: Setting 'Test Teardown' is not allowed in resource file.</msg>
 </errors>
 </robot>

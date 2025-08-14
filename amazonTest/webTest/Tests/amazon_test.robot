@@ -41,24 +41,22 @@ Caso de Teste 04 - Remover Produto do Carrinho
     Remover o produto "Console Xbox Series S" do carrinho    
     Verificar se o carrinho fica vazio
 
-#     ## 📌 Comandos úteis para rodar testes com Robot Framework
+# ## 📌 Comandos úteis para rodar testes com Robot Framework
 
-# # ✅ Rodar testes por TAG
-# python -m robot -i menus amazonTest\webTest\Tests\amazon_test.robot         # Executa apenas os testes com a tag "menus"
-# python -m robot -e menus amazonTest\webTest\Tests\amazon_test.robot         # Executa todos os testes, exceto os que tiverem a tag "menus"
+# # =====================[ Execução por TAG ]=====================
+# python -m robot -i menus amazonTest\webTest\Tests\amazon_test.robot           # Executa apenas os testes com a tag "menus"
+# python -m robot -e menus amazonTest\webTest\Tests\amazon_test.robot           # Executa todos os testes, exceto os que tiverem a tag "menus"
 
-# # ✅ Rodar teste por NOME
-# python -m robot --test "nome_do_teste" amazonTest\webTest\Tests\amazon_test.robot
+# # =====================[ Execução por NOME do teste ]=====================
+# python -m robot --test "nome_do_teste" amazonTest\webTest\Tests\amazon_test.robot     # Executa teste pelo nome exato
+# python -m robot -d results/ -t "Caso de Teste 03 - Adicionar Produto no Carrinho" amazonTest\webTest\Tests\    # Executa teste específico e salva resultados na pasta "results"
+# python -m robot -d results/ -t "*Adicionar Produto no Carrinho*" amazonTest\webTest\Tests\                     # Executa teste que contenha parte do nome e salva na pasta "results"
 
-# # ✅ Trocar o browser (por variável)
-# python -m robot -v BROWSER:chrome amazonTest\webTest\Tests\amazon_test.robot
-# python -m robot -v BROWSER:firefox amazonTest\webTest\Tests\amazon_test.robot
+# # =====================[ Definição de variáveis na execução ]=====================
+# python -m robot -v BROWSER:chrome amazonTest\webTest\Tests\amazon_test.robot          # Troca o browser para Chrome
+# python -m robot -v BROWSER:firefox amazonTest\webTest\Tests\amazon_test.robot         # Troca o browser para Firefox
+# python -m robot -v URL:https://www.amazon.com.br -v BROWSER:chrome amazonTest\webTest\Tests\amazon_test.robot  # Define URL e browser
 
-# # ✅ Definir variáveis diretamente na execução
-# python -m robot -v URL:https://www.amazon.com.br -v BROWSER:chrome amazonTest\webTest\Tests\amazon_test.robot
-
-# # ✅ Executar todos os testes dentro de uma pasta
-# python -m robot amazonTest\webTest\Tests\
-
-# # ✅ Gerar relatórios em diretórios específicos
-# python -m robot -d results/ amazonTest\webTest\Tests\
+# # =====================[ Execução em massa ]=====================
+# python -m robot amazonTest\webTest\Tests\                           # Executa todos os testes dentro da pasta especificada
+# python -m robot -d results/ amazonTest\webTest\Tests\               # Executa todos os testes e gera relatórios apenas na pasta "results"
