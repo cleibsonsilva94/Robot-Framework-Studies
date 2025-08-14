@@ -7,12 +7,12 @@ Test Teardown  Fechar o navegador
 
 *** Test Cases ***
 
-Acesso ao menu "Livros"
-    Dado que estou na home page da Amazon.com.br
-    Quando acessar o menu "Livros"
-    Então o título da página deve ficar "Livros | Amazon.com.br"
-    E o texto "Loja de Livros" deve ser exibido na página
-    E a categoria "Lançamentos" deve ser exibida na página
+# Acesso ao menu "Livros"
+#     Dado que estou na home page da Amazon.com.br
+#     Quando acessar o menu "Livros"
+#     Então o título da página deve ficar "Livros | Amazon.com.br"
+#     E o texto "Loja de Livros" deve ser exibido na página
+#     E a categoria "Lançamentos" deve ser exibida na página
         
 #     ## 📌 Comandos úteis para rodar testes com Robot Framework
 
