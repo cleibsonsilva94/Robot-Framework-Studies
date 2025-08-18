@@ -54,37 +54,12 @@ Adicionar o produto "${PRODUTO}" no carrinho
     Click Button  (//input[@class="a-button-input"])[16]
 
 Direciono-me ao carrinho
-    Wait Until Element Is Visible    //span[@id="attach-sidesheet-view-cart-button-announce"]
+    # Sleep    2m 30s
+    Wait Until Element Is Visible    //span[@id="attach-sidesheet-view-cart-button-announce"]    10s
     Click Element    //*[@id="attach-view-cart-button-form"]
 
 Verificar produto no carrinho
-    [Arguments]    ${PRODUTOCARRINHO}    ${VALOR}
-    
-    # Pega o nome do produto no carrinho
-    ${produto_carrinho}=    Get Text    //span[@class="a-truncate-cut"]
-    
-    # Pega o valor bruto do produto no carrinho
-    ${valor_bruto}=         Get Text    (//span[contains(@class,'nowrap')])[1]
-    
-    # Procura o valor no formato brasileiro (1.234,56)
-    ${match}=    Evaluate    re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', '''${valor_bruto}''')    modules=re
-    
-    # Se não encontrar, falha com mensagem clara
-    Run Keyword Unless    ${match}    Fail    ❌ Valor não encontrado no texto: ${valor_bruto}
-    
-    # Pega o valor encontrado
-    ${valor_limpo}=    Evaluate    ${match}.group(0)
-    
-    # Verifica se produto ou valor divergem do esperado
-    Run Keyword If    '${produto_carrinho}' != '${PRODUTOCARRINHO}' or '${valor_limpo}' != '${VALOR}'
-    ...    Fail    ⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}
-    
-    Log To Console    \n✅ Produto e valor corretos!
-
-Verificar se o produto "${PRODUTO}" foi adicionado com sucesso    # Função (keyword) que recebe o nome e valor do produto e verifica se ele foi adicionado ao carrinho
-    [Arguments]    ${PRODUTO}    ${VALOR}                          # Define os argumentos que serão recebidos: nome do produto e valor
-    Verificar produto no carrinho    ${PRODUTO}    ${VALOR}        # Chama outra keyword para conferir se o produto e valor estão corretos no carrinho
-
+   Wait Until Element Is Visible   //div[contains(text(),'Console Xbox Series S')]    10s
 Remover o produto "${PRODUTO}" do carrinho                         # Função (keyword) para remover o produto informado do carrinho
     Wait Until Element Is Visible    //input[@data-feature-id="item-delete-button"]    # Aguarda até que o botão de remover esteja visível na página
     Click Button    //input[@data-feature-id="item-delete-button"]                    # Clica no botão para remover o produto

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-18T12:03:12.844780" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests">
+<suite id="s1-s1" name="Amazon Test" source="C:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
+<test id="s1-s1-t1" name="Caso de Teste 03 - Adicionar Produto no Carrinho" line="24">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:13.633614" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-18T12:03:13.633614" elapsed="18.392701"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-18T12:03:32.026315" elapsed="0.089301"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGO_AMAZON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-18T12:03:32.116628" elapsed="0.164025"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:13.623825" elapsed="18.656828"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:32.284978" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-18T12:03:32.284978" elapsed="2.808706"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${LOGO_AMAZON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-18T12:03:35.093684" elapsed="0.044221"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:32.283665" elapsed="2.854240"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa" owner="amazon_resources" source_name="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:35.139910" level="INFO">Typing text 'Xbox Series S' into text field '//div[contains(@class,'field')]/*[@type="text"]'.</msg>
+<arg>//div[contains(@class,'field')]/*[@type="text"]</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:35.138892" elapsed="0.206554"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:35.138892" elapsed="0.206554"/>
+</kw>
+<kw name="Clicar no botão de pesquisa" owner="amazon_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:35.345446" level="INFO">Clicking button '//input[contains(@id,'search-submit')]'.</msg>
+<arg>//input[contains(@id,'search-submit')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:35.345446" elapsed="4.365513"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:35.345446" elapsed="4.365513"/>
+</kw>
+<kw name="O sistema deve exibir a tela com o resultado da pesquisa &quot;Console Xbox Series S&quot; listando o produto" owner="amazon_resources" source_name="O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:39.793558" level="INFO">Element '//span[contains(text(), "Console Xbox Series S")]' is displayed.</msg>
+<arg>locator=//span[contains(text(), ${PRODUTO})]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-18T12:03:39.712957" elapsed="0.080601"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:39.711956" elapsed="0.081602"/>
+</kw>
+<kw name="Adicionar o produto &quot;Console Xbox Series S&quot; no carrinho" owner="amazon_resources" source_name="Adicionar o produto &quot;${PRODUTO}&quot; no carrinho">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:39.794855" level="INFO">Clicking element '(//span[contains(text(),'Console Xbox Series S')])[1]'.</msg>
+<arg>locator=(//span[contains(text(),'${PRODUTO}')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:39.794855" elapsed="7.559862"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:47.359470" level="INFO">Clicking element '//input[@id="add-to-cart-button"]'.</msg>
+<arg>//input[@id="add-to-cart-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:47.354717" elapsed="0.264374"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@id="attach-warranty-display"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-18T12:03:47.619091" elapsed="0.998913"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>(//input[@class="a-button-input"])[16]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-18T12:03:48.619005" elapsed="0.264630"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:48.884731" level="INFO">Clicking button '(//input[@class="a-button-input"])[16]'.</msg>
+<arg>(//input[@class="a-button-input"])[16]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:48.884731" elapsed="0.205063"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:39.793558" elapsed="9.296236"/>
+</kw>
+<kw name="Direciono-me ao carrinho" owner="amazon_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@id="attach-sidesheet-view-cart-button-announce"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-18T12:03:49.092673" elapsed="2.410816"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:51.508342" level="INFO">Clicking element '//*[@id="attach-view-cart-button-form"]'.</msg>
+<arg>//*[@id="attach-view-cart-button-form"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:51.508342" elapsed="2.896506"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:49.090844" elapsed="5.315403"/>
+</kw>
+<kw name="Verificar produto no carrinho" owner="amazon_resources">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:54.449279" level="INFO">${produto_carrinho} = Console Xbox Series S</msg>
+<var>${produto_carrinho}</var>
+<arg>//span[@class="a-truncate-cut"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:54.409260" elapsed="0.040019"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:54.479211" level="INFO">${valor_bruto} = R$ 2.528,90</msg>
+<var>${valor_bruto}</var>
+<arg>(//span[contains(@class,'nowrap')])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-18T12:03:54.449279" elapsed="0.029932"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-18T12:03:54.480243" level="INFO">${match} = None</msg>
+<var>${match}</var>
+<arg>re.search(r'\d{1,3}(?:\.\d{3})*,\d{2}', '''${valor_bruto}''')</arg>
+<arg>modules=re</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-18T12:03:54.479211" elapsed="0.001032"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2025-08-18T12:03:54.481211" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-08-18T12:03:54.483264" level="FAIL">❌ Valor não encontrado no texto: R$ 2.528,90</msg>
+<arg>❌ Valor não encontrado no texto: ${valor_bruto}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-08-18T12:03:54.481211" elapsed="0.003629">❌ Valor não encontrado no texto: R$ 2.528,90</status>
+</kw>
+<arg>${match}</arg>
+<arg>Fail</arg>
+<arg>❌ Valor não encontrado no texto: ${valor_bruto}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2025-08-18T12:03:54.480243" elapsed="0.005620">❌ Valor não encontrado no texto: R$ 2.528,90</status>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${valor_limpo}</var>
+<arg>${match}.group(0)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-08-18T12:03:54.485863" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${produto_carrinho}' != '${PRODUTOCARRINHO}' or '${valor_limpo}' != '${VALOR}'</arg>
+<arg>Fail</arg>
+<arg>⚠️ ALERTA: Produto ou valor divergente!\nProduto esperado: ${PRODUTOCARRINHO} | Encontrado: ${produto_carrinho}\nValor esperado: ${VALOR} | Encontrado: ${valor_limpo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-08-18T12:03:54.487046" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n✅ Produto e valor corretos!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-08-18T12:03:54.487046" elapsed="0.000000"/>
+</kw>
+<arg>Console Xbox Series S</arg>
+<arg>2.662,99</arg>
+<status status="FAIL" start="2025-08-18T12:03:54.407259" elapsed="0.079787">❌ Valor não encontrado no texto: R$ 2.528,90</status>
+</kw>
+<kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-18T12:03:54.703880" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-18T12:03:54.489356" elapsed="0.214524"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-18T12:03:54.703880" elapsed="2.701254"/>
+</kw>
+<status status="PASS" start="2025-08-18T12:03:54.488345" elapsed="2.916789"/>
+</kw>
+<status status="FAIL" start="2025-08-18T12:03:13.623825" elapsed="43.781309">❌ Valor não encontrado no texto: R$ 2.528,90</status>
+</test>
+<doc>Essa suite testa o site da Amazon.com.br</doc>
+<status status="FAIL" start="2025-08-18T12:03:12.913703" elapsed="44.491431"/>
+</suite>
+<status status="FAIL" start="2025-08-18T12:03:12.855291" elapsed="44.558134"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="1" skip="0">Tests</stat>
+<stat name="Amazon Test" id="s1-s1" pass="0" fail="1" skip="0">Tests.Amazon Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-18T12:03:54.481211" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+</errors>
+</robot>

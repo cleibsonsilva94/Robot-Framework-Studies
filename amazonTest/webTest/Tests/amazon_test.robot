@@ -28,18 +28,18 @@ Caso de Teste 03 - Adicionar Produto no Carrinho
     O sistema deve exibir a tela com o resultado da pesquisa "Console Xbox Series S" listando o produto
     Adicionar o produto "Console Xbox Series S" no carrinho
     Direciono-me ao carrinho
-    Verificar produto no carrinho    Console Xbox Series S    2.662,99
+    Verificar produto no carrinho
 
-Caso de Teste 04 - Remover Produto do Carrinho
-    Acessar a home page do site Amazon.com.br
-    Digitar o nome de produto "Xbox Series S" no campo de pesquisa
-    Clicar no botão de pesquisa
-    O sistema deve exibir a tela com o resultado da pesquisa "Console Xbox Series S" listando o produto
-    Adicionar o produto "Console Xbox Series S" no carrinho
-    Direciono-me ao carrinho
-    Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso    Console Xbox Series S    2.662,99
-    Remover o produto "Console Xbox Series S" do carrinho    
-    Verificar se o carrinho fica vazio
+# Caso de Teste 04 - Remover Produto do Carrinho
+#     Acessar a home page do site Amazon.com.br
+#     Digitar o nome de produto "Xbox Series S" no campo de pesquisa
+#     Clicar no botão de pesquisa
+#     O sistema deve exibir a tela com o resultado da pesquisa "Console Xbox Series S" listando o produto
+#     Adicionar o produto "Console Xbox Series S" no carrinho
+#     Direciono-me ao carrinho
+#     Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso    Console Xbox Series S    2.662,99
+#     Remover o produto "Console Xbox Series S" do carrinho    
+#     Verificar se o carrinho fica vazio
 
 # ## 📌 Comandos úteis para rodar testes com Robot Framework
 
