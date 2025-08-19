@@ -16,8 +16,6 @@ ${VALOR_TESTE}      2.662,99
 Abrir o navegador
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Wait Until Element Is Visible    ${LOGO_AMAZON}
-
 Fechar o navegador
     Capture Page Screenshot
     Close Browser
@@ -44,7 +42,7 @@ Clicar no botão de pesquisa
     Click Button    //input[contains(@id,'search-submit')]
 
 O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
-    Element Should Be Visible    locator=//span[contains(text(), ${PRODUTO})]
+    Element Should Be Visible    locator=//span[contains(text(), '${PRODUTO}')]
 
 Adicionar o produto "${PRODUTO}" no carrinho
     Click Element    locator=(//span[contains(text(),'${PRODUTO}')])[1]
@@ -66,3 +64,13 @@ Remover o produto "${PRODUTO}" do carrinho                         # Função (k
 
 Verificar se o carrinho fica vazio                                # Função (keyword) para validar que o carrinho está vazio após remoção
     Element Should Not Be Visible    //div[contains(text(),'Console Xbox Series S')]    10s
+Dado que estou na home page da Amazon.com.br
+    Acessar a home page do site Amazon.com.br
+Quando adicionar o produto "${PRODUTO}" no carrinho
+    Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Clicar no botão de pesquisa
+    O sistema deve exibir a tela com o resultado da pesquisa ${PRODUTO} listando o produto
+    Adicionar o produto "${PRODUTO}" no carrinho
+    Direciono-me ao carrinho
+Então o produto "${PRODUTO}" deve ser mostrado no carrinho
+    Verificar produto no carrinho
