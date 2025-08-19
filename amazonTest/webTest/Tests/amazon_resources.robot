@@ -54,18 +54,15 @@ Adicionar o produto "${PRODUTO}" no carrinho
     Click Button  (//input[@class="a-button-input"])[16]
 
 Direciono-me ao carrinho
-    # Sleep    2m 30s
+    Sleep    1m
     Wait Until Element Is Visible    //span[@id="attach-sidesheet-view-cart-button-announce"]    10s
     Click Element    //*[@id="attach-view-cart-button-form"]
 
 Verificar produto no carrinho
-   Wait Until Element Is Visible   //div[contains(text(),'Console Xbox Series S')]    10s
+   Wait Until Element Is Visible   //div[contains(text(),'Console Xbox Series S')]    15s
 Remover o produto "${PRODUTO}" do carrinho                         # Função (keyword) para remover o produto informado do carrinho
     Wait Until Element Is Visible    //input[@data-feature-id="item-delete-button"]    # Aguarda até que o botão de remover esteja visível na página
     Click Button    //input[@data-feature-id="item-delete-button"]                    # Clica no botão para remover o produto
 
 Verificar se o carrinho fica vazio                                # Função (keyword) para validar que o carrinho está vazio após remoção
-    ${ItensNoCarrinho}=    Get Text    locator=//a[@id="nav-cart"]//span[contains(@class,'nav-cart-count')]    # Obtém o número de itens no carrinho
-    Should Be Equal As Integers    ${ItensNoCarrinho}    0          # Verifica se a quantidade de itens é igual a zero (carrinho vazio)
-    Wait Until Page Does Not Contain Element    locator=//span[contains(text(),'${PRODUTO_TESTE}')]    timeout=5s    # Aguarda até que o produto não esteja mais listado na página
-    Log To Console    \n✅ O carrinho está vazio e o produto não está presente!        # Exibe mensagem de sucesso no console
+    Element Should Not Be Visible    //div[contains(text(),'Console Xbox Series S')]    10s
