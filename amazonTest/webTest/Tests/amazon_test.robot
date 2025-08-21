@@ -40,6 +40,8 @@ Caso de Teste 04 - Remover Produto do Carrinho
     Adicionar o produto "Console Xbox Series S" no carrinho
     Remover o produto "Console Xbox Series S" do carrinho    
     Verificar se o carrinho fica vazio
+Caso de Teste 05 - Aplicando conhecimento de variáveis na forma de lista 
+    Planetas   
 
 # ## 📌 Comandos úteis para rodar testes com Robot Framework
 

@@ -11,6 +11,7 @@ ${HEADER_LIVROS}    Loja de Livros
 ${HEADING_SENTENCE}  //*[contains(text(),'Loja de Livros')]
 ${PRODUTO_TESTE}    Console Xbox Series S
 ${VALOR_TESTE}      2.662,99
+@{PLANETAS_SISTEMA_SOLAR}  Mercúrio  Vênus  Março  Terra  Marte  Júpiter  Saturno  Urano  Netuno
 
 *** Keywords ***
 Abrir o navegador
@@ -74,3 +75,6 @@ Quando adicionar o produto "${PRODUTO}" no carrinho
     Direciono-me ao carrinho
 Então o produto "${PRODUTO}" deve ser mostrado no carrinho
     Verificar produto no carrinho
+
+Planetas 
+    Log  Os Planetas depois do Astro Rei são ${PLANETAS_SISTEMA_SOLAR}
