@@ -1,20 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-22T11:45:07.739957" rpa="false" schemaversion="5">
-<suite id="s1" name="Amazon Test" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
-<test id="s1-t1" name="Caso de Teste 05 - Aplicando conhecimento de variáveis na forma de lista" line="43">
-<kw name="Planetas" owner="amazon_resources">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-08-22T11:45:08.282275" level="INFO">Os Planetas depois do Astro Rei são ['Mercúrio', 'Vênus', 'Terra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Netuno']</msg>
-<arg>Os Planetas depois do Astro Rei são @{PLANETAS_SISTEMA_SOLAR}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-22T11:45:08.282275" elapsed="0.003740"/>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-22T15:21:09.135551" rpa="false" schemaversion="5">
+<suite id="s1" name="Atividades" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividades.robot">
+<test id="s1-t1" name="Caso de Teste 02 - Aplicando conhecimento de variáveis na forma de Dicionário" line="16">
+<kw name="Dias do mês">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-08-22T11:45:08.282275" elapsed="0.005262"/>
+<var name="${DIAS_NO_MES}">('Janeiro', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-08-22T11:45:08.280680" elapsed="0.007868"/>
+<var name="${DIAS_NO_MES}">('Fevereiro', '28')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Março', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Abril', '30')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Maio', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Junho', '30')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Julho', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Agosto', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Setembro', '30')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.014604"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Outubro', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.014604"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.561334" elapsed="0.001008"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Novembro', '30')</var>
+<status status="PASS" start="2025-08-22T15:21:09.561334" elapsed="0.001008"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${DIAS_NO_MES}</arg>
+<arg>dias</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-22T15:21:09.562342" elapsed="0.001020"/>
+</kw>
+<var name="${DIAS_NO_MES}">('Dezembro', '31')</var>
+<status status="PASS" start="2025-08-22T15:21:09.562342" elapsed="0.001020"/>
+</iter>
+<var>${DIAS_NO_MES}</var>
+<value>&amp;{DIAS_NO_MES_BANCO}</value>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.016632"/>
+</for>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.016632"/>
+</kw>
+<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.017615"/>
 </test>
 <doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="PASS" start="2025-08-22T11:45:07.750440" elapsed="0.539285"/>
+<status status="PASS" start="2025-08-22T15:21:09.143149" elapsed="0.422195"/>
 </suite>
 <statistics>
 <total>
@@ -23,7 +142,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Amazon Test" id="s1" pass="1" fail="0" skip="0">Amazon Test</stat>
+<stat name="Atividades" id="s1" pass="1" fail="0" skip="0">Atividades</stat>
 </suite>
 </statistics>
 <errors>

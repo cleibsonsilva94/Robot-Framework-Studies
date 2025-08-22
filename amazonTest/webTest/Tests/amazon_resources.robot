@@ -75,8 +75,3 @@ Quando adicionar o produto "${PRODUTO}" no carrinho
     Direciono-me ao carrinho
 Então o produto "${PRODUTO}" deve ser mostrado no carrinho
     Verificar produto no carrinho
-
-Planetas
-    FOR  ${planeta}  IN  @{PLANETAS_SISTEMA_SOLAR}
-        Log  Planeta: ${planeta}
-    END
