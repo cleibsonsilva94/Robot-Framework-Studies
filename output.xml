@@ -1,139 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-22T15:21:09.135551" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-22T15:46:09.635107" rpa="false" schemaversion="5">
 <suite id="s1" name="Atividades" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividades.robot">
-<test id="s1-t1" name="Caso de Teste 02 - Aplicando conhecimento de variáveis na forma de Dicionário" line="16">
-<kw name="Dias do mês">
-<for flavor="IN">
-<iter>
+<test id="s1-t1" name="Caso de Teste 02 - Aplicando conhecimento de variáveis na forma de Dicionário" line="26">
+<kw name="Dias_no_mês">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Janeiro tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Janeiro}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.082513" elapsed="0.000000"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Janeiro', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Fevereiro tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Fevereiro}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.082513" elapsed="0.015660"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Fevereiro', '28')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Março tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Março}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.098173" elapsed="0.000907"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Março', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Abril tem: ${DIAS_NO_MES_BANCO.Abril}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.099080" elapsed="0.000000"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Abril', '30')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Maio tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Maio}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.099080" elapsed="0.002959"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Maio', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Junho tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Junho}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.102039" elapsed="0.001011"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Junho', '30')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Julho tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Julho}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.103050" elapsed="0.001001"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Julho', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Agosto tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Agosto}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.104051" elapsed="0.000994"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Agosto', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Setembro tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Setembro}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
+<status status="PASS" start="2025-08-22T15:46:10.105045" elapsed="0.001002"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Setembro', '30')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.000000"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Outubro tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Outubro}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.014604"/>
+<status status="PASS" start="2025-08-22T15:46:10.106592" elapsed="0.000000"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Outubro', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.014604"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Novembro tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Novembro}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.561334" elapsed="0.001008"/>
+<status status="PASS" start="2025-08-22T15:46:10.106592" elapsed="0.000000"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Novembro', '30')</var>
-<status status="PASS" start="2025-08-22T15:21:09.561334" elapsed="0.001008"/>
-</iter>
-<iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${DIAS_NO_MES}</arg>
+<arg>Dezembro tem:</arg>
+<arg>${DIAS_NO_MES_BANCO.Dezembro}</arg>
 <arg>dias</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T15:21:09.562342" elapsed="0.001020"/>
+<status status="PASS" start="2025-08-22T15:46:10.106592" elapsed="0.000000"/>
 </kw>
-<var name="${DIAS_NO_MES}">('Dezembro', '31')</var>
-<status status="PASS" start="2025-08-22T15:21:09.562342" elapsed="0.001020"/>
-</iter>
-<var>${DIAS_NO_MES}</var>
-<value>&amp;{DIAS_NO_MES_BANCO}</value>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.016632"/>
-</for>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.016632"/>
+<status status="PASS" start="2025-08-22T15:46:10.082513" elapsed="0.024079"/>
 </kw>
-<status status="PASS" start="2025-08-22T15:21:09.546730" elapsed="0.017615"/>
+<status status="PASS" start="2025-08-22T15:46:10.082513" elapsed="0.024079"/>
 </test>
-<doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="PASS" start="2025-08-22T15:21:09.143149" elapsed="0.422195"/>
+<status status="PASS" start="2025-08-22T15:46:09.648109" elapsed="0.458483"/>
 </suite>
 <statistics>
 <total>
@@ -146,5 +103,6 @@
 </suite>
 </statistics>
 <errors>
+<msg time="2025-08-22T15:46:09.602867" level="WARN">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividades.robot' on line 4: Singular section headers like '*** Variable ***' are deprecated. Use plural format like '*** Variables ***' instead.</msg>
 </errors>
 </robot>
