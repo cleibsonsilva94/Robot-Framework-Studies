@@ -1,46 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-21T17:16:41.780518" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-22T11:45:07.739957" rpa="false" schemaversion="5">
 <suite id="s1" name="Amazon Test" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\amazonTest\webTest\Tests\amazon_test.robot">
 <test id="s1-t1" name="Caso de Teste 05 - Aplicando conhecimento de variáveis na forma de lista" line="43">
-<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-21T17:16:42.223405" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com.br/'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-21T17:16:42.223405" elapsed="13.478033"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-21T17:16:55.701961" elapsed="0.087013"/>
-</kw>
-<status status="PASS" start="2025-08-21T17:16:42.223405" elapsed="13.565569"/>
-</kw>
 <kw name="Planetas" owner="amazon_resources">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-08-21T17:16:55.793024" level="INFO">Os Planetas depois do Astro Rei são ['Mercúrio', 'Vênus', 'Março', 'Terra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Netun']</msg>
-<arg>Os Planetas depois do Astro Rei são ${PLANETAS_SISTEMA_SOLAR}</arg>
+<msg time="2025-08-22T11:45:08.282275" level="INFO">Os Planetas depois do Astro Rei são ['Mercúrio', 'Vênus', 'Terra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Netuno']</msg>
+<arg>Os Planetas depois do Astro Rei são @{PLANETAS_SISTEMA_SOLAR}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-21T17:16:55.792014" elapsed="0.001533"/>
+<status status="PASS" start="2025-08-22T11:45:08.282275" elapsed="0.003740"/>
 </kw>
-<status status="PASS" start="2025-08-21T17:16:55.789974" elapsed="0.003573"/>
+<status status="PASS" start="2025-08-22T11:45:08.282275" elapsed="0.005262"/>
 </kw>
-<kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-08-21T17:16:56.188085" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-08-21T17:16:55.806681" elapsed="0.382729"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-21T17:16:56.189410" elapsed="2.454176"/>
-</kw>
-<status status="PASS" start="2025-08-21T17:16:55.803662" elapsed="2.839924"/>
-</kw>
-<status status="PASS" start="2025-08-21T17:16:42.223405" elapsed="16.422648"/>
+<status status="PASS" start="2025-08-22T11:45:08.280680" elapsed="0.007868"/>
 </test>
 <doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="PASS" start="2025-08-21T17:16:41.792062" elapsed="16.857007"/>
+<status status="PASS" start="2025-08-22T11:45:07.750440" elapsed="0.539285"/>
 </suite>
 <statistics>
 <total>

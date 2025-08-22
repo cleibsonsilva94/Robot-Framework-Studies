@@ -2,8 +2,8 @@
 Documentation  Essa suite testa o site da Amazon.com.br
 
 Resource       amazon_resources.robot
-Test Setup     Abrir o navegador
-Test Teardown  Fechar o navegador 
+# Test Setup     Abrir o navegador
+# Test Teardown  Fechar o navegador 
 
 *** Test Cases ***
 *** Test Cases ***
@@ -62,3 +62,42 @@ Caso de Teste 05 - Aplicando conhecimento de variáveis na forma de lista
 # # =====================[ Execução em massa ]=====================
 # python -m robot amazonTest\webTest\Tests\                           # Executa todos os testes dentro da pasta especificada
 # python -m robot -d results/ amazonTest\webTest\Tests\               # Executa todos os testes e gera relatórios apenas na pasta "results"
+
+# // ===========================
+# // RELEMBRANDO O FOR      :)
+# // ===========================
+# //
+# // 1) LOOP FOR
+# //    - Serve para repetir um bloco de código várias vezes.
+# //    - Cada repetição é chamada de "ciclo" ou "iteração".
+# //
+# // 2) VARIÁVEL TEMPORÁRIA
+# //    - A cada ciclo, a variável temporária recebe um item da lista.
+# //    - Exemplo: 'cliente' recebe cada objeto da lista 'clientes'.
+# //
+# // 3) SINTAXE GERAL
+# //    for (let variavelTemporaria of lista) {
+# //        // bloco de código que será repetido
+# //    }
+# //
+# // 4) EXEMPLO PRÁTICO
+# //    const clientes = [
+# //        { nome: "Cleibson", email: "cleibson@email.com" },
+# //        { nome: "Deane", email: "deane@email.com" }
+# //    ];
+# //
+# //    for (let cliente of clientes) {
+# //        console.log("Enviando e-mail para", cliente.nome);
+# //    }
+# //
+# // 5) O QUE ACONTECE
+# //    - Primeiro ciclo: cliente = { nome: "Cleibson", email: "..." }
+# //      → imprime "Enviando e-mail para Cleibson"
+# //    - Segundo ciclo: cliente = { nome: "Deane", email: "..." }
+# //      → imprime "Enviando e-mail para Deane"
+# //    - Repete até o final da lista.
+# //
+# // 6) OBSERVAÇÕES
+# //    - A variável temporária só existe dentro do bloco do for.
+# //    - O 'for...of' é ideal para percorrer arrays ou listas de objetos.
+# //    - Analogia: é como pegar um item de cada vez de uma cesta e fazer algo com ele.
