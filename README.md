@@ -70,14 +70,14 @@ A organização do projeto segue uma estrutura simples e clara, dividida em past
 - **`Robot-Framework-Studies/amazonTest/webTest/Tests/amazon_resources.robot`**  
   Centraliza todas as **Keywords** utilizadas nos arquivos de teste da pasta `Tests`.  
 
-- **`Robot-Framework-Studies/VariaveisEscoposArgumentos/`**  
+- **`Robot-Framework-Studies/VariaveisEscoposArgumentos`**  
   Contém conteúdos e testes relacionados a **variáveis** no Robot Framework.  
   Os arquivos que começam com **“Atividade”** foram desenvolvidos por mim como parte do cronograma de desafios e exercícios propostos pela professora.  
 
-- **`Robot-Framework-Studies/amazonTest/Documents/`**  
+- **`Robot-Framework-Studies/amazonTest/Documents`**  
   Armazena o **PDF** com os primeiros casos de teste implementados.  
 
-- **`Robot-Framework-Studies/amazonTest/settings/`**  
+- **`Robot-Framework-Studies/amazonTest/settings`**  
   Reúne os arquivos de **configuração padrão** do projeto.  
 
 ## 📚 Referência
