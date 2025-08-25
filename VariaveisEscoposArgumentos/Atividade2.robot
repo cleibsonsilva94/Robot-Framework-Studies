@@ -18,3 +18,23 @@ Gerando Email
     ${email}=    Set Variable    ${PRIMEIRONOME}${SEGUNDONOME}${palavra}@testerobot.com    # Junta: nome + sobrenome + string aleatória + domínio fixo
 
     [Return]    ${email}    # Retorna o e-mail montado para quem chamou a keyword
+
+
+# *** Settings ***
+# Library   String
+
+# *** Variables ***
+# &{PESSOA}   nome=May   sobrenome=Fernandes
+
+# *** Test Cases ***
+# Imprimindo um e-mail customizado e aleatório
+#     ${EMAIL_CRIADO}    Criar e-mail customizado e aleatório    ${PESSOA.nome}    ${PESSOA.sobrenome}
+#     Log To Console     ${EMAIL_CRIADO}
+
+
+# *** Keywords ***
+# Criar e-mail customizado e aleatório
+#     [Arguments]       ${NOME}  ${SOBRENOME}
+#     ${ALEATORIA}      Generate Random String
+#     ${EMAIL_FINAL}    Set Variable    ${NOME}${SOBRENOME}${ALEATORIA}@testerobot.com
+#     [Return]          ${EMAIL_FINAL}
