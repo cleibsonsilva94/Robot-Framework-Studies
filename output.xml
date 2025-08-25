@@ -1,35 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-25T15:43:38.780977" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-25T16:08:58.574837" rpa="false" schemaversion="5">
 <suite id="s1" name="Atividade2" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividade2.robot">
-<test id="s1-t1" name="Caso de teste 01 - Criando email corporativo" line="7">
+<test id="s1-t1" name="Caso de teste 01 - Criando email corporativo" line="6">
 <kw name="Gerando Email">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-08-25T15:43:39.184530" level="FAIL">Invalid log level 'mayfernandes@exemplo.com.br'.</msg>
-<arg>O email incial é: ${PRIMEIRONOME} e</arg>
-<arg>${SEGUNDONOME}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="FAIL" start="2025-08-25T15:43:39.183443" elapsed="0.003995">Invalid log level 'mayfernandes@exemplo.com.br'.</status>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T16:08:58.631398" level="INFO">${palavra} = cAc6h</msg>
+<var>${palavra}</var>
+<arg>5</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T16:08:58.630381" elapsed="0.003999"/>
 </kw>
-<arg>${PESSOA.nome}</arg>
-<arg>${PESSOA.email}</arg>
-<status status="FAIL" start="2025-08-25T15:43:39.182458" elapsed="0.004980">Invalid log level 'mayfernandes@exemplo.com.br'.</status>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T16:08:58.635381" level="INFO">${email} = MayFernandescAc6h@testerobot.com</msg>
+<var>${email}</var>
+<arg>${PRIMEIRONOME}${SEGUNDONOME}${palavra}@testerobot.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T16:08:58.634380" elapsed="0.001001"/>
 </kw>
-<status status="FAIL" start="2025-08-25T15:43:39.181397" elapsed="0.007041">Invalid log level 'mayfernandes@exemplo.com.br'.</status>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2025-08-25T16:08:58.635381" elapsed="0.000000"/>
+</return>
+<msg time="2025-08-25T16:08:58.636382" level="INFO">${email_gerado} = MayFernandescAc6h@testerobot.com</msg>
+<var>${email_gerado}</var>
+<arg>May</arg>
+<arg>Fernandes</arg>
+<status status="PASS" start="2025-08-25T16:08:58.630381" elapsed="0.006001"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>O e-mail gerado foi: ${email_gerado}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-25T16:08:58.636382" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-08-25T16:08:58.629381" elapsed="0.007998"/>
 </test>
-<doc>Exemplo de uso de variáveis como argumentos em Keywords</doc>
-<status status="FAIL" start="2025-08-25T15:43:38.788893" elapsed="0.400545"/>
+<doc>Exemplo de keyword que gera um e-mail customizado sem FakerLibrary</doc>
+<status status="PASS" start="2025-08-25T16:08:58.586864" elapsed="0.052517"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Atividade2" id="s1" pass="0" fail="1" skip="0">Atividade2</stat>
+<stat name="Atividade2" id="s1" pass="1" fail="0" skip="0">Atividade2</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-08-25T15:43:38.753368" level="WARN">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividade2.robot' on line 4: Singular section headers like '*** Variable ***' are deprecated. Use plural format like '*** Variables ***' instead.</msg>
+<msg time="2025-08-25T16:08:58.542395" level="WARN">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividade2.robot' on line 19: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>
