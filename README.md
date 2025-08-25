@@ -59,7 +59,26 @@ robot tests/
 
 ## 📂 Estrutura do Projeto
 
-## 🧪 Aplicação Testada
+A organização do projeto segue uma estrutura simples e clara, dividida em pastas e arquivos com finalidades específicas:
+
+- **`Robot-Framework-Studies/amazonTest/webTest/Tests/`**  
+  Contém os arquivos de testes básicos desenvolvidos no site **amazon.com**.  
+  Inclui arquivos escritos em **Gherkin**.  
+  Os arquivos seguem a nomenclatura padrão:  
+  **`<NomeDoSite> + Test.robot`** (ex.: `Amazon_Test.robot`).  
+
+- **`Robot-Framework-Studies/amazonTest/webTest/Tests/amazon_resources.robot`**  
+  Centraliza todas as **Keywords** utilizadas nos arquivos de teste da pasta `Tests`.  
+
+- **`Robot-Framework-Studies/VariaveisEscoposArgumentos/`**  
+  Contém conteúdos e testes relacionados a **variáveis** no Robot Framework.  
+  Os arquivos que começam com **“Atividade”** foram desenvolvidos por mim como parte do cronograma de desafios e exercícios propostos pela professora.  
+
+- **`Robot-Framework-Studies/amazonTest/Documents/`**  
+  Armazena o **PDF** com os primeiros casos de teste implementados.  
+
+- **`Robot-Framework-Studies/amazonTest/settings/`**  
+  Reúne os arquivos de **configuração padrão** do projeto.  
 
 ## 📚 Referência
 
