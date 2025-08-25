@@ -1,12 +1,13 @@
 *** Settings ***
+Library        SeleniumLibrary
 Documentation   Exemplo de uso de variáveis como argumentos em Keywords
-Library         String
 *** Variable ***
-&{PESSOA}       nome=May  sobreNome= Lima  email=mayfernandes@exemplo.com.br   idade=11   sexo=feminino
+&{PESSOA}       nome=May  email=mayfernandes@exemplo.com.br   idade=11   sexo=feminino
 *** Test Cases ***
 Caso de teste 01 - Criando email corporativo
-    Gerando Email  ${PESSOA.nome}    ${PESSOA.sobreNome}
+    Gerando Email  ${PESSOA.nome}    ${PESSOA.email}
+
 *** Keywords ***
-Gerando Email 
-    [Arguments]  ${PRIMEIRONOME}  ${SEGUNDONOME}
-    Log   ${PRIMEIRONOME}   ${SEGUNDONOME}
+Gerando Email
+    [Arguments]  ${PRIMEIRONOME}    ${SEGUNDONOME}
+    Log     O email incial é: ${PRIMEIRONOME} e  ${SEGUNDONOME}
