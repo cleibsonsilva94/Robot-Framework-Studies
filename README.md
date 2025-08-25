@@ -61,7 +61,7 @@ robot tests/
 
 A organização do projeto segue uma estrutura simples e clara, dividida em pastas e arquivos com finalidades específicas:
 
-- **`Robot-Framework-Studies/amazonTest/webTest/Tests/`**  
+- **`Robot-Framework-Studies/amazonTest/webTest/Tests`**  
   Contém os arquivos de testes básicos desenvolvidos no site **amazon.com**.  
   Inclui arquivos escritos em **Gherkin**.  
   Os arquivos seguem a nomenclatura padrão:  
