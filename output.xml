@@ -1,87 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-22T16:18:02.176144" rpa="false" schemaversion="5">
-<suite id="s1" name="Atividades" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividades.robot">
-<test id="s1-t1" name="Caso de Teste 02 - Aplicando conhecimento de variáveis na forma de Dicionário" line="27">
-<kw name="Dias no mês">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>JANEIRO TEM ${DIAS_NO_MES_BANCO.Janeiro}</arg>
-<arg>dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.608947" elapsed="0.000000"/>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-25T12:16:50.669275" rpa="false" schemaversion="5">
+<suite id="s1" name="Atividade2" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividade2.robot">
+<test id="s1-t1" name="Caso de teste 01 - Criando email corporativo" line="7">
+<kw name="Gerando Email">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-25T12:16:50.719267" level="FAIL">Invalid log level ' Lima'.</msg>
+<arg>${PRIMEIRONOME}</arg>
+<arg>${SEGUNDONOME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="FAIL" start="2025-08-25T12:16:50.719267" elapsed="0.011714">Invalid log level ' Lima'.</status>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>FEVEREIRO TEM ${DIAS_NO_MES_BANCO.Fevereiro}</arg>
-<arg>dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.608947" elapsed="0.000000"/>
+<arg>${PESSOA.nome}</arg>
+<arg>${PESSOA.sobreNome}</arg>
+<status status="FAIL" start="2025-08-25T12:16:50.719267" elapsed="0.012744">Invalid log level ' Lima'.</status>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>MARÇO TEM ${DIAS_NO_MES_BANCO.Março} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.608947" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>ABRIL TEM ${DIAS_NO_MES_BANCO.Abril} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.608947" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>MAIO TEM ${DIAS_NO_MES_BANCO.Maio} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.616945" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>JUNHO TEM ${DIAS_NO_MES_BANCO.Junho} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.616945" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>JULHO TEM ${DIAS_NO_MES_BANCO.Julho} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.616945" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>AGOSTO TEM ${DIAS_NO_MES_BANCO.Agosto} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.616945" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>SETEMBRO TEM ${DIAS_NO_MES_BANCO.Setembro} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.616945" elapsed="0.008027"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>OUTUBRO TEM ${DIAS_NO_MES_BANCO.Outubro} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.624972" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>NOVEMBRO TEM ${DIAS_NO_MES_BANCO.Novembro} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.624972" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>DEZEMBRO TEM ${DIAS_NO_MES_BANCO.Dezembro} dias</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-22T16:18:02.624972" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2025-08-22T16:18:02.600922" elapsed="0.024050"/>
-</kw>
-<status status="PASS" start="2025-08-22T16:18:02.600922" elapsed="0.024050"/>
+<status status="FAIL" start="2025-08-25T12:16:50.718052" elapsed="0.015065">Invalid log level ' Lima'.</status>
 </test>
-<doc>Essa suite testa o site da Amazon.com.br</doc>
-<status status="PASS" start="2025-08-22T16:18:02.184059" elapsed="0.440913"/>
+<doc>Exemplo de uso de variáveis como argumentos em Keywords</doc>
+<status status="FAIL" start="2025-08-25T12:16:50.685935" elapsed="0.049225"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Atividades" id="s1" pass="1" fail="0" skip="0">Atividades</stat>
+<stat name="Atividade2" id="s1" pass="0" fail="1" skip="0">Atividade2</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-08-25T12:16:50.644755" level="WARN">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\VariaveisEscoposArgumentos\Atividade2.robot' on line 4: Singular section headers like '*** Variable ***' are deprecated. Use plural format like '*** Variables ***' instead.</msg>
 </errors>
 </robot>
