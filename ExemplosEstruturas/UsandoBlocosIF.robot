@@ -58,3 +58,27 @@ Logar informações quando o status for menor ou igual que zero
 Logar informações quando o status for igual a zero
     Log   O STATUS [${STATUS}] é igual a zero!
     Log To Console    O STATUS [${STATUS}] é igual a zero!
+
+# =========================================================
+# Explicação breve sobre IF:
+#
+# O IF é uma estrutura de decisão que permite executar um bloco de código
+# apenas se uma condição for verdadeira. Caso contrário, podemos usar ELSE ou ELSE IF
+# para tratar outros cenários.
+#
+# Analogia:
+# Imagine que você está se preparando para sair:
+# - IF estiver chovendo: pega o guarda-chuva.
+# - ELSE IF estiver frio: coloca um casaco.
+# - ELSE: vai de camiseta.
+#
+# Exemplo em Python:
+# idade = 18
+# if idade >= 18:
+#     print("Pode votar")
+# else:
+#     print("Ainda não pode votar")
+#
+# No Robot Framework, funciona da mesma forma: o IF decide qual bloco de comandos executar
+# baseado na condição, permitindo tratar diferentes situações automaticamente.
+# =========================================================
