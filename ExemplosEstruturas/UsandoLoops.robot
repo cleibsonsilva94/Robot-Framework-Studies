@@ -31,12 +31,18 @@ Teste percorrer lista
 *** Keywords ***
 
 Percorrendo lista
-    FOR  ${LISTANUMERICA}  IN  ${MINHA_LISTA_DE_NUMEROS}
-        Log To Console    ${LISTANUMERICA}  
-        IF  ${LISTANUMERICA} == 5 $ 10
-         Log To Console  Minha posição agora é ${LISTANUMERICA}
-        END
+    FOR    ${LISTANUMERICA}    IN    @{MINHA_LISTA_DE_NUMEROS}
+    Log To Console    ${LISTANUMERICA}
+    # Usamos "or" para verificar se o número atual é 5 OU 10
+    # O "==" é a comparação de igualdade
+    IF    ${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10
+        # Se a condição for verdadeira, imprime a posição atual
+        Log To Console    Minha posição agora é ${LISTANUMERICA}
     END
+    END
+# Observações:
+# - A lista deve ser chamada com @{ } e não ${ }, porque estamos percorrendo uma lista.
+# - O operador lógico "or" permite checar múltiplas condições ao mesmo tempo.
 Usando Repeat keyword
 ##Comando para pular linha ${\n}. 
     Log To Console  ${\n}
