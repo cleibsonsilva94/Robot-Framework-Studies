@@ -4,7 +4,7 @@ Documentation   Vamos aprender a fazer LOOPS usando o Robot Framework!!
 *** Variables ***
 ### Indíce da lista          0      1        2       3       4       5
 @{MINHA_LISTA_DE_FRUTAS}   maça  abacaxi  banana  morango  laranja  uva
-
+@{MINHA_LISTA_DE_NUMEROS}  1    2    3    4    5    6    7    8    9    10
 *** Test Case ***
 Teste de REPEAT KEYWORD
     [Documentation]  Chama uma mesma keyword várias vezes
@@ -26,7 +26,17 @@ Teste de Sair do FOR
     [Documentation]  Você controla quando o FOR deve se encerrar antes de terminar todos os LOOPS
     Usando FOR IN com EXIT FOR LOOP IF
 
+Teste percorrer lista
+    Percorrendo lista
 *** Keywords ***
+
+Percorrendo lista
+    FOR  ${LISTANUMERICA}  IN  ${MINHA_LISTA_DE_NUMEROS}
+        Log To Console    ${LISTANUMERICA}  
+        IF  ${LISTANUMERICA} == 5 $ 10
+         Log To Console  Minha posição agora é ${LISTANUMERICA}
+        END
+    END
 Usando Repeat keyword
 ##Comando para pular linha ${\n}. 
     Log To Console  ${\n}
