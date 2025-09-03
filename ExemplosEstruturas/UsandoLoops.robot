@@ -33,16 +33,10 @@ Teste percorrer lista
 Percorrendo lista
     FOR    ${LISTANUMERICA}    IN    @{MINHA_LISTA_DE_NUMEROS}
     Log To Console    ${LISTANUMERICA}
-    # Usamos "or" para verificar se o número atual é 5 OU 10
-    # O "==" é a comparação de igualdade
     IF    ${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10
-        # Se a condição for verdadeira, imprime a posição atual
         Log To Console    Minha posição agora é ${LISTANUMERICA}
     END
     END
-# Observações:
-# - A lista deve ser chamada com @{ } e não ${ }, porque estamos percorrendo uma lista.
-# - O operador lógico "or" permite checar múltiplas condições ao mesmo tempo.
 Usando Repeat keyword
 ##Comando para pular linha ${\n}. 
     Log To Console  ${\n}
@@ -76,3 +70,60 @@ Usando FOR IN com EXIT FOR LOOP IF
         Log To Console    Minha fruta é: ${INDICE} --> ${FRUTA}!
         Exit For Loop If    '${FRUTA}'=='banana'
     END
+
+
+# Solução e sugestão da professora. 
+
+# *** Settings ***
+# Documentation    Exercício IF e FOR
+
+# *** Variables ***
+# @{NUMEROS}       0  3  5  7  9  10  12
+
+# *** Test Cases ***
+# Teste de imprimir apenas alguns números
+#   Imprimir somente se for 5 e 10
+
+# *** Keywords ***
+# Imprimir somente se for 5 e 10
+#   Log To Console  ${\n}
+
+#   FOR    ${numero}    IN   @{NUMEROS}
+#       IF  ${numero} == 5
+#           Log To Console    Eu sou o número 5!
+#       ELSE IF  ${numero} == 10
+#           Log To Console    Eu sou o número 10!
+#       ELSE
+#           Log To Console    Eu não sou o número 5 e nem o 10!
+#       END
+#   END
+
+#   Log To Console  ${\n}
+#   #FICA A DICA
+#   # Existem outros modos de fazer, veja abaixo:
+#   FOR    ${numero}    IN   @{NUMEROS}
+#       IF  ${numero} == 5 or ${numero} == 10
+#           Log To Console    Eu sou o número ${numero}!
+#       ELSE
+#           Log To Console    Eu não sou o número 5 e nem o 10!
+#       END
+#   END
+
+#   Log To Console  ${\n}
+#   FOR    ${numero}    IN   @{NUMEROS}
+#       IF  ${numero} in (5, 10)
+#           Log To Console    Eu sou o número ${numero}!
+#       ELSE
+#           Log To Console    Eu não sou o número 5 e nem o 10!
+#       END              
+#   END
+
+## EXPLICAÇÕES
+
+# Usamos "or" para verificar se o número atual é 5 OU 10
+    # O "==" é a comparação de igualdade
+    # Se a condição for verdadeira, imprime a posição atual
+
+    # Observações:
+# - A lista deve ser chamada com @{ } e não ${ }, porque estamos percorrendo uma lista.
+# - O operador lógico "or" permite checar múltiplas condições ao mesmo tempo.
