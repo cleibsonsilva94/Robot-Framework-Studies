@@ -1,219 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-09-03T15:04:08.267716" rpa="false" schemaversion="5">
-<suite id="s1" name="UsandoLoops" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\ExemplosEstruturas\UsandoLoops.robot">
-<test id="s1-t1" name="Teste percorrer lista" line="29">
-<kw name="Percorrendo lista">
-<for flavor="IN">
-<iter>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-09-04T14:29:17.863669" rpa="false" schemaversion="5">
+<suite id="s1" name="Api Testing Usuarios" source="c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\ApiTesting\ApiTesting\tests\api_testing_usuarios.robot">
+<test id="s1-t1" name="Cenário 01: Cadastrar um novo usuário com sucesso na ServeRest" line="6">
+<kw name="Criar um usuário novo" owner="api_testing_usuarios">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-04T14:29:18.508242" level="INFO">${palavra_aleatoria} = XZLR</msg>
+<var>${palavra_aleatoria}</var>
+<arg>length=4</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-04T14:29:18.508242" elapsed="0.004238"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-09-04T14:29:18.513718" level="INFO">${palavra_aleatoria} = xzlr</msg>
+<var>${palavra_aleatoria}</var>
+<arg>${palavra_aleatoria}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-09-04T14:29:18.513718" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-04T14:29:18.515741" level="INFO">${EMAIL_TESTE} = xzlr@emailteste.com</msg>
+<arg>${EMAIL_TESTE}</arg>
+<arg>${palavra_aleatoria}@emailteste.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-04T14:29:18.514730" elapsed="0.001011"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-04T14:29:18.515741" level="INFO">xzlr@emailteste.com</msg>
+<arg>${EMAIL_TESTE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-04T14:29:18.515741" elapsed="0.001001"/>
+</kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
+<arg>${EMAIL_TESTE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.316631" elapsed="0.001287"/>
+<status status="PASS" start="2025-09-04T14:29:18.516742" elapsed="0.000000"/>
 </kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.319150" elapsed="0.000000"/>
+<status status="PASS" start="2025-09-04T14:29:18.502180" elapsed="0.015558"/>
 </kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.317918" elapsed="0.001232"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.317918" elapsed="0.001232"/>
-</if>
-<var name="${LISTANUMERICA}">1</var>
-<status status="PASS" start="2025-09-03T15:04:08.316631" elapsed="0.002519"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.320161" elapsed="0.000000"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.321527" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.321527" elapsed="0.001014"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.321527" elapsed="0.001014"/>
-</if>
-<var name="${LISTANUMERICA}">2</var>
-<status status="PASS" start="2025-09-03T15:04:08.320161" elapsed="0.002380"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.322541" elapsed="0.000995"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.324535" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.323536" elapsed="0.000999"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.323536" elapsed="0.000999"/>
-</if>
-<var name="${LISTANUMERICA}">3</var>
-<status status="PASS" start="2025-09-03T15:04:08.322541" elapsed="0.001994"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.325538" elapsed="0.000000"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.326540" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.325538" elapsed="0.001002"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.325538" elapsed="0.001002"/>
-</if>
-<var name="${LISTANUMERICA}">4</var>
-<status status="PASS" start="2025-09-03T15:04:08.324535" elapsed="0.002005"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.326540" elapsed="0.000995"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.328537" elapsed="0.001002"/>
-</kw>
-<status status="PASS" start="2025-09-03T15:04:08.327535" elapsed="0.002004"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.327535" elapsed="0.002004"/>
-</if>
-<var name="${LISTANUMERICA}">5</var>
-<status status="PASS" start="2025-09-03T15:04:08.326540" elapsed="0.002999"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.330543" elapsed="0.000000"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.331538" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.331538" elapsed="0.000000"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.331538" elapsed="0.000999"/>
-</if>
-<var name="${LISTANUMERICA}">6</var>
-<status status="PASS" start="2025-09-03T15:04:08.329539" elapsed="0.002998"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.332537" elapsed="0.001010"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.333547" elapsed="0.000998"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.333547" elapsed="0.000998"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.333547" elapsed="0.000998"/>
-</if>
-<var name="${LISTANUMERICA}">7</var>
-<status status="PASS" start="2025-09-03T15:04:08.332537" elapsed="0.002008"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.334545" elapsed="0.001004"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.336552" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.335549" elapsed="0.001003"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.335549" elapsed="0.001003"/>
-</if>
-<var name="${LISTANUMERICA}">8</var>
-<status status="PASS" start="2025-09-03T15:04:08.334545" elapsed="0.002007"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.337546" elapsed="0.000000"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-03T15:04:08.338756" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-09-03T15:04:08.337546" elapsed="0.001210"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.337546" elapsed="0.002244"/>
-</if>
-<var name="${LISTANUMERICA}">9</var>
-<status status="PASS" start="2025-09-03T15:04:08.336552" elapsed="0.003238"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.339790" elapsed="0.001964"/>
-</kw>
-<if>
-<branch type="IF" condition="${LISTANUMERICA} == 5 or ${LISTANUMERICA} == 10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Minha posição agora é ${LISTANUMERICA}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-03T15:04:08.342755" elapsed="0.001002"/>
-</kw>
-<status status="PASS" start="2025-09-03T15:04:08.341754" elapsed="0.002003"/>
-</branch>
-<status status="PASS" start="2025-09-03T15:04:08.341754" elapsed="0.002003"/>
-</if>
-<var name="${LISTANUMERICA}">10</var>
-<status status="PASS" start="2025-09-03T15:04:08.339790" elapsed="0.003967"/>
-</iter>
-<var>${LISTANUMERICA}</var>
-<value>@{MINHA_LISTA_DE_NUMEROS}</value>
-<status status="PASS" start="2025-09-03T15:04:08.316631" elapsed="0.027126"/>
-</for>
-<status status="PASS" start="2025-09-03T15:04:08.315629" elapsed="0.028128"/>
-</kw>
-<status status="PASS" start="2025-09-03T15:04:08.314626" elapsed="0.030248"/>
+<status status="PASS" start="2025-09-04T14:29:18.502180" elapsed="0.015558"/>
 </test>
-<doc>Vamos aprender a fazer LOOPS usando o Robot Framework!!</doc>
-<status status="PASS" start="2025-09-03T15:04:08.274658" elapsed="0.071226"/>
+<status status="PASS" start="2025-09-04T14:29:17.877086" elapsed="0.642654"/>
 </suite>
 <statistics>
 <total>
@@ -222,10 +49,9 @@
 <tag>
 </tag>
 <suite>
-<stat name="UsandoLoops" id="s1" pass="1" fail="0" skip="0">UsandoLoops</stat>
+<stat name="Api Testing Usuarios" id="s1" pass="1" fail="0" skip="0">Api Testing Usuarios</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-09-03T15:04:08.219054" level="WARN">Error in file 'c:\Users\CLELIMA\Documents\CDG_Test\RobotFramework\Robot-Framework-Studies\ExemplosEstruturas\UsandoLoops.robot' on line 8: Singular section headers like '*** Test Case ***' are deprecated. Use plural format like '*** Test Cases ***' instead.</msg>
 </errors>
 </robot>
