@@ -39,7 +39,18 @@
    - **Observação:** Na linha 36-39, a variável `${resposta}` é local, visível apenas dentro da keyword.  
      Com o `Set Test Variable`, ela se torna **pública/global**.
 
----
+
+4. **`Vou repetir o cadastro do usuário`**  
+   - **Função:** `Cadastrar o usuário criado na ServeRest`  
+   - **O que faz:** Reutiliza a keyword de cadastro de usuário, mas dessa vez passando o mesmo email `${EMAIL_TESTE}` que já foi cadastrado anteriormente. O parâmetro `status_code_desejado=400` indica que o retorno esperado da API deve ser **erro**, já que o email não pode ser repetido.  
+   - **Exemplo:** Se `${EMAIL_TESTE}` = `"abcd@emailteste.com"`, ao tentar cadastrar novamente, a resposta esperada será um JSON:  
+     ```json
+     {
+       "message": "Este email já está sendo usado"
+     }
+     ```  
+   - **Observação:** Essa keyword garante que a API está validando corretamente emails duplicados. O resultado será usado depois na verificação **"Verificar se a API não permitiu o cadastro repetido"**.  
+
 
 ## 📝 Explicação da Keyword: Cadastrar o usuário criado na ServeRest (linhas 26 a 39)
 
