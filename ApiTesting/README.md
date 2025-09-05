@@ -31,14 +31,13 @@
    - **O que faz:** Converte o conteúdo de uma string para letras minúsculas.
    - **Exemplo de entrada:** `"ABCD"` → **saída:** `"abcd"`
 
-3. **`Set Test Variable     ${EMAIL_TESTE}  ${palavra_aleatoria}@emailteste.com`**
-   - **Função:** `Set Test Variable`
-   - **Origem:** BuiltIn (função interna do Robot Framework)
+3. **`Set Test Variable     ${EMAIL_TESTE}  ${palavra_aleatoria}@emailteste.com`**  
+   - **Função:** `Set Test Variable`  
+   - **Origem:** BuiltIn (função interna do Robot Framework)  
    - **O que faz:** Cria uma variável no nível de teste que pode ser usada em qualquer parte do caso de teste.  
-   - **Exemplo:** Se `${palavra_aleatoria}` = `"abcd"`, então `${EMAIL_TESTE}` será `"abcd@emailteste.com"`.
+   - **Exemplo:** Se `${palavra_aleatoria}` = `"abcd"`, então `${EMAIL_TESTE}` será `"abcd@emailteste.com"`.  
    - **Observação:** Na linha 36-39, a variável `${resposta}` é local, visível apenas dentro da keyword.  
-     Com o `Set Test Variable`, ela se torna **pública/global**.
-
+     Com o `Set Test Variable`, ela se torna **pública/global**.  
 
 4. **`Vou repetir o cadastro do usuário`**  
    - **Função:** `Cadastrar o usuário criado na ServeRest`  
@@ -51,6 +50,32 @@
      ```  
    - **Observação:** Essa keyword garante que a API está validando corretamente emails duplicados. O resultado será usado depois na verificação **"Verificar se a API não permitiu o cadastro repetido"**.  
 
+5. **`Consultar os dados do novo usuário`**  
+   - **Função:** `GET On Session` (da RequestsLibrary) + `Set Test Variable` (BuiltIn do Robot Framework).  
+   - **O que faz:** Realiza uma requisição `GET` para a API `/usuarios/${ID_USUARIO}` usando a sessão já criada (`ServeRest`). Em seguida, faz logs detalhados de várias propriedades do objeto de resposta (status, headers, tempo de resposta, body, etc.). Por fim, transforma o corpo JSON retornado em uma variável de teste `${RESP_CONSULTA}`, que poderá ser usada em outros passos do caso de teste.  
+   - **Exemplo:** Se `${ID_USUARIO}` = `123abc`, o request vai para `https://serverest.dev/usuarios/123abc`. Se a API retornar:  
+     ```json
+     {
+       "nome": "Fulano da Silva",
+       "email": "abcd@emailteste.com",
+       "password": "1234",
+       "administrador": true,
+       "_id": "123abc"
+     }
+     ```  
+     Esse JSON será guardado em `${RESP_CONSULTA}`.  
+   - **Observação:** A keyword não valida nada por si só, apenas consulta e armazena a resposta. A verificação acontece na próxima keyword.  
+
+6. **`Conferir os dados retornados`**  
+   - **Função:** `Dictionary Should Contain Item` (da Collections Library).  
+   - **O que faz:** Verifica se o JSON salvo em `${RESP_CONSULTA}` contém exatamente os dados esperados do usuário cadastrado. Ele checa campo a campo (`nome`, `email`, `password`, `administrador`, `_id`).  
+   - **Exemplo:** Se `${EMAIL_TESTE}` = `abcd@emailteste.com` e `${ID_USUARIO}` = `123abc`, os asserts vão garantir que:  
+     - `${RESP_CONSULTA}["nome"]` = `Fulano da Silva`  
+     - `${RESP_CONSULTA}["email"]` = `abcd@emailteste.com`  
+     - `${RESP_CONSULTA}["password"]` = `1234`  
+     - `${RESP_CONSULTA}["administrador"]` = `true`  
+     - `${RESP_CONSULTA}["_id"]` = `123abc`  
+   - **Observação:** Essa keyword funciona como uma “prova real” de que o usuário realmente foi cadastrado na base e que os dados gravados são consistentes com os que foram enviados na requisição de cadastro.
 
 ## 📝 Explicação da Keyword: Cadastrar o usuário criado na ServeRest (linhas 26 a 39)
 
