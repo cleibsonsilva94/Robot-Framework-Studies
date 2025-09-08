@@ -68,8 +68,8 @@ Consultar os dados do novo usuário
 
 Conferir os dados retornados
     Log   ${RESP_CONSULTA}
-    Dictionary Should Contain Item    ${RESP_CONSULTA}    nome            Fulano da Silva
+    Dictionary Should Contain Item    ${RESP_CONSULTA}    nome            Michael Jackson
     Dictionary Should Contain Item    ${RESP_CONSULTA}    email           ${EMAIL_TESTE}
-    Dictionary Should Contain Item    ${RESP_CONSULTA}    password        1234
+    Dictionary Should Contain Item    ${RESP_CONSULTA}    password        2009
     Dictionary Should Contain Item    ${RESP_CONSULTA}    administrador   true
     Dictionary Should Contain Item    ${RESP_CONSULTA}    _id             ${ID_USUARIO}
