@@ -5,6 +5,7 @@
 ## 📑 Sumário
 - [✨ Explicação da Primeira Keyword (linhas 08 a 14)](#-explicação-da-primeira-keyword-linhas-08-a-14)
 - [📝 Explicação da Keyword: Cadastrar o usuário criado na ServeRest (linhas 26 a 39)](#-explicação-da-keyword-cadastrar-o-usuário-criado-na-serverest-linhas-26-a-39)
+- [🔍 Explicação da Keyword: Consultar e conferir os dados do novo usuário (linhas 54 a 71)](#-explicação-da-keyword-consultar-e-conferir-os-dados-do-novo-usuário-linhas-54-a-71)
 - [📌 Biblioteca: Collections](#-biblioteca-collections)
 - [📌 O que é uma API e seus principais elementos](#-o-que-é-uma-api-e-seus-principais-elementos)
   - [🔑 Principais elementos de uma API](#-principais-elementos-de-uma-api)
@@ -50,32 +51,7 @@
      ```  
    - **Observação:** Essa keyword garante que a API está validando corretamente emails duplicados. O resultado será usado depois na verificação **"Verificar se a API não permitiu o cadastro repetido"**.  
 
-5. **`Consultar os dados do novo usuário`**  
-   - **Função:** `GET On Session` (da RequestsLibrary) + `Set Test Variable` (BuiltIn do Robot Framework).  
-   - **O que faz:** Realiza uma requisição `GET` para a API `/usuarios/${ID_USUARIO}` usando a sessão já criada (`ServeRest`). Em seguida, faz logs detalhados de várias propriedades do objeto de resposta (status, headers, tempo de resposta, body, etc.). Por fim, transforma o corpo JSON retornado em uma variável de teste `${RESP_CONSULTA}`, que poderá ser usada em outros passos do caso de teste.  
-   - **Exemplo:** Se `${ID_USUARIO}` = `123abc`, o request vai para `https://serverest.dev/usuarios/123abc`. Se a API retornar:  
-     ```json
-     {
-       "nome": "Fulano da Silva",
-       "email": "abcd@emailteste.com",
-       "password": "1234",
-       "administrador": true,
-       "_id": "123abc"
-     }
-     ```  
-     Esse JSON será guardado em `${RESP_CONSULTA}`.  
-   - **Observação:** A keyword não valida nada por si só, apenas consulta e armazena a resposta. A verificação acontece na próxima keyword.  
-
-6. **`Conferir os dados retornados`**  
-   - **Função:** `Dictionary Should Contain Item` (da Collections Library).  
-   - **O que faz:** Verifica se o JSON salvo em `${RESP_CONSULTA}` contém exatamente os dados esperados do usuário cadastrado. Ele checa campo a campo (`nome`, `email`, `password`, `administrador`, `_id`).  
-   - **Exemplo:** Se `${EMAIL_TESTE}` = `abcd@emailteste.com` e `${ID_USUARIO}` = `123abc`, os asserts vão garantir que:  
-     - `${RESP_CONSULTA}["nome"]` = `Fulano da Silva`  
-     - `${RESP_CONSULTA}["email"]` = `abcd@emailteste.com`  
-     - `${RESP_CONSULTA}["password"]` = `1234`  
-     - `${RESP_CONSULTA}["administrador"]` = `true`  
-     - `${RESP_CONSULTA}["_id"]` = `123abc`  
-   - **Observação:** Essa keyword funciona como uma “prova real” de que o usuário realmente foi cadastrado na base e que os dados gravados são consistentes com os que foram enviados na requisição de cadastro.
+---
 
 ## 📝 Explicação da Keyword: Cadastrar o usuário criado na ServeRest (linhas 26 a 39)
 
@@ -109,6 +85,67 @@
 
 - **`Set Test Variable    ${RESPOSTA}    ${resposta.json()}`**  
   ➝ Salva toda a resposta JSON da API na variável `${RESPOSTA}` para ser reutilizada depois.
+
+---
+
+## 🔍 Explicação da Keyword: Consultar e conferir os dados do novo usuário (linhas 54 a 71)
+
+### Keyword: **Consultar os dados do novo usuário**
+
+1. **`${resposta_consulta}  GET On Session  alias=ServeRest  url=/usuarios/${ID_USUARIO}  expected_status=200`**
+   - **Função:** `GET On Session`  
+   - **Origem:** `RequestsLibrary`  
+   - **O que faz:** Realiza uma requisição `GET` no endpoint `/usuarios/${ID_USUARIO}` para consultar o usuário recém-criado.  
+   - **Exemplo:** Se `${ID_USUARIO}` = `123abc`, o request vai para:  
+     `https://serverest.dev/usuarios/123abc`.
+
+2. **`Log   ${resposta_consulta.status_code}`**, **`Log   ${resposta_consulta.reason}`**, etc.  
+   - **Função:** Mostrar informações úteis no log para depuração.  
+   - **O que cada um faz:**  
+     - `status_code` → código HTTP retornado (ex.: `200`).  
+     - `reason` → mensagem textual do status (ex.: `"OK"`).  
+     - `headers` → cabeçalhos retornados pela API.  
+     - `elapsed` → tempo que a requisição levou para ser processada.  
+     - `text` → corpo da resposta em texto.  
+     - `json()` → corpo da resposta já convertido em JSON (dicionário Python).  
+
+3. **`Set Test Variable     ${RESP_CONSULTA}  ${resposta_consulta.json()}`**  
+   - **Função:** Salva o corpo JSON retornado pela API em uma variável acessível no restante do teste.  
+   - **Exemplo:**  
+     ```json
+     {
+       "nome": "Fulano da Silva",
+       "email": "abcd@emailteste.com",
+       "password": "1234",
+       "administrador": true,
+       "_id": "123abc"
+     }
+     ```
+
+---
+
+### Keyword: **Conferir os dados retornados**
+
+1. **`Log   ${RESP_CONSULTA}`**  
+   - Exibe no log todo o JSON recebido da API para fácil conferência.  
+
+2. **`Dictionary Should Contain Item`**  
+   - **Origem:** `Collections Library`.  
+   - **Função:** Verificar se o dicionário `${RESP_CONSULTA}` contém os pares chave/valor esperados.  
+   - **Validações realizadas:**  
+     - `"nome"` → deve ser `"Fulano da Silva"`  
+     - `"email"` → deve ser `${EMAIL_TESTE}` (o mesmo gerado no início do teste)  
+     - `"password"` → deve ser `"1234"`  
+     - `"administrador"` → deve ser `true`  
+     - `"_id"` → deve ser `${ID_USUARIO}`  
+
+   - **Exemplo prático:**  
+     Se `${EMAIL_TESTE}` = `"abcd@emailteste.com"` e `${ID_USUARIO}` = `"123abc"`, a validação confirma que os dados gravados no banco da API são os mesmos enviados na requisição de cadastro.
+
+📍 **Conclusão:**  
+Essas duas keywords (linhas 54 a 71) garantem que:  
+- O usuário foi realmente **cadastrado na API**.  
+- Os **dados armazenados** estão consistentes com os enviados na criação.  
 
 ---
 
@@ -195,4 +232,4 @@ A biblioteca **Collections** do Robot Framework fornece keywords para manipulaç
 
 - Uma **API** é o meio de comunicação entre sistemas.  
 - Você envia uma **requisição** (pedido) para um **endpoint**, com **headers** e possivelmente um **body**.  
-- O servidor processa e responde com um **status code** e uma **response** (resposta).  
+- O servidor processa e responde com um **status code** e uma **response** (resposta).
