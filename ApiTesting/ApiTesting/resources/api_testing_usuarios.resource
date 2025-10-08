@@ -15,7 +15,7 @@ Criar um usuário novo
 Cadastrar o usuário criado na ServeRest
     [Arguments]  ${email}  ${status_code_desejado}
     ${body}  Create Dictionary
-    ...      nome=Fulano da Silva
+    ...      nome=Michael Jackson o melhor de todos os tempos
     ...      email=${email}
     ...      password=1234
     ...      administrador=true   
@@ -73,3 +73,26 @@ Conferir os dados retornados
     Dictionary Should Contain Item    ${RESP_CONSULTA}    password        2009
     Dictionary Should Contain Item    ${RESP_CONSULTA}    administrador   true
     Dictionary Should Contain Item    ${RESP_CONSULTA}    _id             ${ID_USUARIO}
+
+Realizar Login com o usuário
+    ${body_login}  Create Dictionary
+    ...             email=${EMAIL_TESTE}
+    ...             password=1234
+    Log  ${body_login}
+
+    ${resposta_login}  POST On Session
+    ...                alias=ServeRest
+    ...                url=/login
+    ...                json=${body_login}
+    ...                expected_status=200
+
+    Log  ${resposta_login.json()}
+    Log To Console  ${resposta_login.json()}
+
+    Set Test Variable  ${RESPOSTA_LOGIN}  ${resposta_login.json()}
+
+
+Conferir se o Login ocorreu com sucesso
+    Log  ${RESPOSTA_LOGIN}
+    Dictionary Should Contain Key     ${RESPOSTA_LOGIN}   authorization
+    Dictionary Should Contain Item    ${RESPOSTA_LOGIN}   message   Login realizado com sucesso

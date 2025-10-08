@@ -75,3 +75,6 @@ Quando adicionar o produto "${PRODUTO}" no carrinho
     Direciono-me ao carrinho
 Então o produto "${PRODUTO}" deve ser mostrado no carrinho
     Verificar produto no carrinho
+
+O sistema deve exibir a tela a seguinte mensagem de erro "${texto}"
+    Wait Until Element Is Visible   //*[contains(text(),'${texto}')]

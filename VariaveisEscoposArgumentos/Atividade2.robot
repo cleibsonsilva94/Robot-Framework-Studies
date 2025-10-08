@@ -1,6 +1,8 @@
 *** Settings ***
 Library    String
 Documentation   Exemplo de keyword que gera um e-mail customizado sem FakerLibrary 
+Library           FakerLibrary
+Library           RequestsLibrary
 
 *** Test Cases ***
 Caso de teste 01 - Criando email corporativo
@@ -20,6 +22,18 @@ Gerando Email
     [Return]    ${email}    # Retorna o e-mail montado para quem chamou a keyword
 
 
+*** Keywords ***
+Gerando Email Customizado
+    [Arguments]    ${nome}    ${sobrenome}
+    ${palavra_aleatoria}=    FakerLibrary.Word
+    ${email}=    Set Variable    ${nome}${sobrenome}${palavra_aleatoria}@testerobot.com
+    [Return]    ${email}
+
+*** Test Cases ***
+Teste Gerar Email Customizado
+    ${email_gerado}=   Gerando Email Customizado    Michael    Jackson
+    Log To Console    \nE-mail gerado: ${email_gerado}
+
 # *** Settings ***
 # Library   String
 
@@ -38,3 +52,4 @@ Gerando Email
 #     ${ALEATORIA}      Generate Random String
 #     ${EMAIL_FINAL}    Set Variable    ${NOME}${SOBRENOME}${ALEATORIA}@testerobot.com
 #     [Return]          ${EMAIL_FINAL}
+

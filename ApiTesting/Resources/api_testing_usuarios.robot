@@ -1,7 +1,5 @@
 *** Settings ***
 Resource    ../ApiTesting/resources/api_testing_usuarios.resource
-
-
 *** Test Cases ***
 Cenário 01: Cadastrar um novo usuário com sucesso na ServeRest
     Criar um usuário novo
@@ -19,3 +17,9 @@ Cenário 03: Consultar os dados de um novo usuário
     Cadastrar o usuário criado na ServeRest  email=${EMAIL_TESTE}  status_code_desejado=201
     Consultar os dados do novo usuário
     Conferir os dados retornados
+
+Cenário 04: Logar com o novo usuário criado
+    Criar um usuário novo
+    Cadastrar o usuário criado na ServeRest  email=${EMAIL_TESTE}  status_code_desejado=201
+    Realizar Login com o usuário 
+    Conferir se o Login ocorreu com sucesso

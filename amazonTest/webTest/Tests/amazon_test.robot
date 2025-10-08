@@ -41,6 +41,12 @@ Caso de Teste 04 - Remover Produto do Carrinho
     Remover o produto "Console Xbox Series S" do carrinho    
     Verificar se o carrinho fica vazio
 
+Caso de Teste 05 - Pesquisando produto que não existe
+    Abrir o navegador
+    Acessar a home page do site Amazon.com.br
+    Digitar o nome de produto "dfsnjkadsfn" no campo de pesquisa
+    Clicar no botão de pesquisa
+    O sistema deve exibir a tela a seguinte mensagem de erro "Nenhum resultado para"
 
 # ## 📌 Comandos úteis para rodar testes com Robot Framework
 

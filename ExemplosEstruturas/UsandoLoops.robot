@@ -127,3 +127,22 @@ Usando FOR IN com EXIT FOR LOOP IF
     # Observações:
 # - A lista deve ser chamada com @{ } e não ${ }, porque estamos percorrendo uma lista.
 # - O operador lógico "or" permite checar múltiplas condições ao mesmo tempo.
+
+*** Variables ***
+@{LISTA5E10}    2    5    7    10    12     4
+
+*** Keywords ***
+Verificar Números
+    FOR    ${numero}    IN    @{LISTA5E10}
+        IF    ${numero} == 5
+            Log To Console    Eu sou o número 5!
+        ELSE IF    ${numero} == 10
+            Log To Console    Eu sou o número 10!
+        ELSE
+            Log To Console    não sou o número 5 e nem o 10!
+        END
+    END
+
+*** Test Cases ***
+Teste Verificar Números
+    Verificar Números
