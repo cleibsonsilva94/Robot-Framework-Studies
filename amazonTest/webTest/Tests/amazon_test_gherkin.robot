@@ -2,41 +2,43 @@
 Documentation  Essa suite testa o site da Amazon.com.br
 
 Resource       amazon_resources.robot
+Resource    ../../../amazonTest\webTest/Tests/amazon_resources.robot
+Resource    ../../../SoluçãoDaProfessoraAmazonTest/amazon_resources.robot
 Test Setup     Abrir o navegador
 Test Teardown  Fechar o navegador 
 
 *** Test Cases ***
 
-# Acesso ao menu "Livros"
-#     Dado que estou na home page da Amazon.com.br
-#     Quando acessar o menu "Livros"
-#     Então o título da página deve ficar "Livros | Amazon.com.br"
-#     E o texto "Loja de Livros" deve ser exibido na página
-#     E a categoria "Lançamentos" deve ser exibida na página
+Acesso ao menu "Livros"
+    Dado que estou na home page da Amazon.com.br
+    Quando acessar o menu "Livros"
+    Então o título da página deve ficar "Livros | Amazon.com.br"
+    E o texto "Loja de Livros" deve ser exibido na página
+    E a categoria "Lançamentos" deve ser exibida na página
 
-# Caso de Teste 03 - Adicionar Produto no Carrinho
-#     [Documentation]    Esse teste verifica a adição de um produto no carrinho de compras
-#     [Tags]             adicionar_carrinho
-#     Dado que estou na home page da Amazon.com.br
-#     Quando adicionar o produto "Console Xbox Series S" no carrinho
-#     Então o produto ""Console Xbox Series S" deve ser mostrado no carrinho
+Caso de Teste 03 - Adicionar Produto no Carrinho
+    [Documentation]    Esse teste verifica a adição de um produto no carrinho de compras
+    [Tags]             adicionar_carrinho
+    Dado que estou na home page da Amazon.com.br
+    Quando adicionar o produto "Console Xbox Series S" no carrinho
+    Então o produto ""Console Xbox Series S" deve ser mostrado no carrinho
  
-# Caso de Teste 04 - Remover Produto do Carrinho
-#     [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
-#     [Tags]             remover_carrinho
-#     Dado que estou na home page da Amazon.com.br
-#     E existe o produto "Console Xbox Series S" no carrinho
-#     Quando remover o produto "Console Xbox Series S" do carrinho
-#     Então o carrinho deve ficar vazio
+Caso de Teste 04 - Remover Produto do Carrinho
+    [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
+    [Tags]             remover_carrinho
+    Dado que estou na home page da Amazon.com.br
+    E existe o produto "Console Xbox Series S" no carrinho
+    Quando remover o produto "Console Xbox Series S" do carrinho
+    Então o carrinho deve ficar vazio
 
-# Caso de Teste 04 - Pesquisando produto que não existe
-#     [Documentation]    Esse teste verifica se é possível pesquisar produto/livro inexistente
-#     [Tags]             produto_inexistente
-#     Dado que estou na home page da Amazon.com.br
-#     E existe o produto "fmniefjnows" no carrinho
-#     Então o site deve apresenatar a seguinte mensagem "Nenhum resultado para fmniefjnows em Livros"
+Caso de Teste 04 - Pesquisando produto que não existe
+    [Documentation]    Esse teste verifica se é possível pesquisar produto/livro inexistente
+    [Tags]             produto_inexistente
+    Dado que estou na home page da Amazon.com.br
+    E existe o produto "fmniefjnows" no carrinho
+    Então o site deve apresenatar a seguinte mensagem "Nenhum resultado para fmniefjnows em livros"
 
-    ## 📌 Comandos úteis para rodar testes com Robot Framework
+## 📌 Comandos úteis para rodar testes com Robot Framework
 
 # # ✅ Rodar testes por TAG
 # python -m robot -i menus amazonTest\webTest\Tests\amazon_test.robot         # Executa apenas os testes com a tag "menus"
